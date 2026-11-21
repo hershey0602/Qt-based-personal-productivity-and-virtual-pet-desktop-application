@@ -1,0 +1,499 @@
+{
+  "version": "FG-API-1.0",
+  "ports": {
+    "IRepository": {
+      "implementation": "Repository",
+      "owner": "B",
+      "dependencies": [],
+      "methods": [
+        [
+          "OperationResult open(const QString& databasePath);",
+          "A装配时一次调用；启用外键，建表/迁移；失败不进入Live"
+        ],
+        [
+          "OperationResult close();",
+          "A关闭时调用；先停止计时/播放器并销毁查询对象"
+        ],
+        [
+          "Result<QVector<Task>> listTasks(const TaskFilter& filter) const;",
+          "TaskManager，排除软删并稳定排序"
+        ],
+        [
+          "Result<std::optional<Task>> task(TaskId id) const;",
+          "TaskManager/RewardService（不可读取软删任务作为新会话）"
+        ],
+        [
+          "Result<Task> createTask(const TaskDraft& draft);",
+          "TaskManager，单事务"
+        ],
+        [
+          "Result<Task> updateTask(TaskId id, const TaskDraft& draft);",
+          "TaskManager，保留完成状态与创建时间"
+        ],
+        [
+          "OperationResult setTaskDone(TaskId id, bool completed);",
+          "TaskManager，零金币"
+        ],
+        [
+          "OperationResult softDeleteTask(TaskId id);",
+          "TaskManager，只标deleted"
+        ],
+        [
+          "Result<QVector<Task>> todayTasks(const QDate& date, int limit) const;",
+          "StatisticsService；同日截止、升序、最多3"
+        ],
+        [
+          "Result<TaskCounts> taskCounts() const;",
+          "StatisticsService；全部未删除任务"
+        ],
+        [
+          "OperationResult insertRunningSession(const FocusSession& session);",
+          "FocusEngine；仅Focus/Custom，在开始成功后启动计时"
+        ],
+        [
+          "OperationResult updateSessionActivity(const SessionId& id, SessionStatus status, int elapsedSeconds, const QDateTime& updatedAtUtc);",
+          "FocusEngine；只允许Running/Paused更新"
+        ],
+        [
+          "OperationResult completeSession(const CompletionWrite& write);",
+          "FocusEngine；首次写Completed/Pending；相同完成值幂等"
+        ],
+        [
+          "OperationResult abandonSession(const AbandonWrite& write);",
+          "FocusEngine；仅Running/Paused可转Abandoned，零币"
+        ],
+        [
+          "Result<std::optional<FocusSession>> session(const SessionId& id) const;",
+          "RewardService/Coordinator只读"
+        ],
+        [
+          "Result<QVector<FocusSession>> pendingCompletions() const;",
+          "Coordinator启动恢复：Completed且Pending"
+        ],
+        [
+          "OperationResult recoverInterruptedSessions(const QDateTime& recoveredAtUtc);",
+          "启动由A调用；遗留Running/Paused标Abandoned，不补奖"
+        ],
+        [
+          "Result<StatisticsSnapshot> statistics(const QDate& anchorDate) const;",
+          "StatisticsService统一计算首页与统计口径"
+        ],
+        [
+          "Result<PetSnapshot> petSnapshot() const;",
+          "PetManager/RewardService；余额SUM，不另建wallet"
+        ],
+        [
+          "Result<SettlementReceipt> creditRewardAtomically(const RewardCreditRequest& request);",
+          "C RewardService调用；B执行事务及唯一索引防重"
+        ],
+        [
+          "Result<FeedReceipt> feedPetAtomically(const FeedCommand& command);",
+          "C PetManager调用；B原子扣币+经验+心情"
+        ]
+      ],
+      "signals": []
+    },
+    "ITaskService": {
+      "implementation": "TaskManager",
+      "owner": "B",
+      "dependencies": [
+        "IRepository"
+      ],
+      "methods": [
+        [
+          "Result<QVector<Task>> listTasks(const TaskFilter& filter) const;",
+          "A/B页面经AppServices调用"
+        ],
+        [
+          "Result<std::optional<Task>> task(TaskId id) const;",
+          "共用编辑弹窗与详情"
+        ],
+        [
+          "Result<Task> saveTask(const TaskDraft& draft, std::optional<TaskId> id);",
+          "空id新增；有id编辑；共同校验"
+        ],
+        [
+          "OperationResult setTaskDone(TaskId id, bool completed);",
+          "完成恢复，不发币"
+        ],
+        [
+          "OperationResult softDeleteTask(TaskId id);",
+          "确认后软删"
+        ]
+      ],
+      "signals": [
+        "void tasksChanged();",
+        "void errorOccurred(fg::AppError error);"
+      ]
+    },
+    "IStatisticsService": {
+      "implementation": "StatisticsService",
+      "owner": "B",
+      "dependencies": [
+        "IRepository"
+      ],
+      "methods": [
+        [
+          "Result<StatisticsSnapshot> statistics() const;",
+          "A/B页面调用，以当前本地日为anchor"
+        ],
+        [
+          "Result<QVector<Task>> todayTasks() const;",
+          "A今日最多3项"
+        ]
+      ],
+      "signals": []
+    },
+    "ISettingsService": {
+      "implementation": "SettingsService",
+      "owner": "D",
+      "dependencies": [],
+      "methods": [
+        [
+          "OperationResult load();",
+          "启动一次；损坏/失败明确报错，内存采用默认值但不冒称已保存"
+        ],
+        [
+          "Preferences preferences() const;",
+          "B/A读取已加载缓存"
+        ],
+        [
+          "OperationResult savePreferences(const Preferences& preferences);",
+          "D设置页经门面调用；sync/status失败恢复旧缓存和旧键并报错"
+        ],
+        [
+          "MusicPreferences musicPreferences() const;",
+          "D MusicController读取清单与音量"
+        ],
+        [
+          "OperationResult saveMusicPreferences(const MusicPreferences& preferences);",
+          "D MusicController保存本地路径与音量，不新增设置页选项"
+        ]
+      ],
+      "signals": [
+        "void preferencesChanged(fg::Preferences preferences);",
+        "void musicPreferencesChanged(fg::MusicPreferences preferences);",
+        "void errorOccurred(fg::AppError error);"
+      ]
+    },
+    "IFocusEngine": {
+      "implementation": "FocusEngine",
+      "owner": "B",
+      "dependencies": [
+        "IRepository",
+        "ISettingsService"
+      ],
+      "methods": [
+        [
+          "FocusSnapshot snapshot() const;",
+          "只读快照"
+        ],
+        [
+          "std::optional<CompletionResult> lastCompletion() const;",
+          "最近结果，包括Pending；切页不清空"
+        ],
+        [
+          "OperationResult configure(const FocusConfig& config);",
+          "仅Idle/Completed可配置；不开始；Completed先转Idle但保留lastCompletion"
+        ],
+        [
+          "OperationResult prepareNextRound(FocusMode mode);",
+          "读取D当前默认，DefaultSetting来源，转Idle，不启动"
+        ],
+        [
+          "Result<SessionId> start();",
+          "只允许Idle；生成UUID与标题快照；保存Running成功才开始"
+        ],
+        [
+          "OperationResult pause(const SessionId& expectedSessionId);",
+          "只允许同会话Running，保存状态失败不伪报暂停"
+        ],
+        [
+          "OperationResult resume(const SessionId& expectedSessionId);",
+          "只允许同会话Paused"
+        ],
+        [
+          "OperationResult abandon(const SessionId& expectedSessionId);",
+          "确认后调用；持久化失败保留原活动状态；休息只清内存"
+        ],
+        [
+          "OperationResult retryCompletionSave(const SessionId& expectedSessionId);",
+          "仅当前SaveFailed；保留原结束时间/日期/ID"
+        ],
+        [
+          "void applySettlementSuccess(const SettlementReceipt& receipt);",
+          "仅A Coordinator调用；当前同id转Completed；老记录只更新结果"
+        ],
+        [
+          "void applySettlementFailure(const SessionId& id, const AppError& error);",
+          "仅Coordinator；已保存记录保留Pending，不回退Completed数据库状态"
+        ],
+        [
+          "void onPreferencesChanged(fg::Preferences preferences);",
+          "Qt slot；仅Idle且DefaultSetting更新草稿，活动/显式时长不变"
+        ]
+      ],
+      "signals": [
+        "void focusChanged(fg::FocusSnapshot snapshot);",
+        "void completionPersisted(fg::SessionId sessionId);",
+        "void restFinished();",
+        "void errorOccurred(fg::AppError error);"
+      ]
+    },
+    "IRewardService": {
+      "implementation": "RewardService",
+      "owner": "C",
+      "dependencies": [
+        "IRepository"
+      ],
+      "methods": [
+        [
+          "Result<SettlementReceipt> settleCompletedSession(const SessionId& sessionId);",
+          "仅Coordinator调用；读已保存完成记录，算奖励，调Repo原子端口"
+        ]
+      ],
+      "signals": [
+        "void rewardCommitted(fg::SettlementReceipt receipt);",
+        "void errorOccurred(fg::AppError error);"
+      ]
+    },
+    "IPetService": {
+      "implementation": "PetManager",
+      "owner": "C",
+      "dependencies": [
+        "IRepository"
+      ],
+      "methods": [
+        [
+          "Result<PetSnapshot> pet() const;",
+          "A/C页面共享快照"
+        ],
+        [
+          "Result<FeedReceipt> feed();",
+          "生成一个OperationId，C规则校验，调用Repo原子喂食"
+        ]
+      ],
+      "signals": [
+        "void petChanged(fg::PetSnapshot pet);",
+        "void petLeveled(fg::FeedReceipt receipt);",
+        "void errorOccurred(fg::AppError error);"
+      ]
+    },
+    "IMusicController": {
+      "implementation": "MusicController",
+      "owner": "D",
+      "dependencies": [
+        "ISettingsService"
+      ],
+      "methods": [
+        [
+          "OperationResult loadPlaylist();",
+          "启动仅恢复路径/音量，不自动播放"
+        ],
+        [
+          "MusicSnapshot snapshot() const;",
+          "MusicPage只读"
+        ],
+        [
+          "OperationResult importFiles(const QStringList& absolutePaths);",
+          "一次多选本地文件；保存失败保持原清单"
+        ],
+        [
+          "OperationResult select(int index);",
+          "单击选中；换曲停止并归零，不自动播"
+        ],
+        [
+          "OperationResult playPause();",
+          "命令被接受不代表已播放；以后端状态信号为准"
+        ],
+        [
+          "OperationResult stop();",
+          "停止归零"
+        ],
+        [
+          "OperationResult previous();",
+          "顺序循环；正在播放时切曲保持播放"
+        ],
+        [
+          "OperationResult next();",
+          "同上；媒体自然结束强制播放后继"
+        ],
+        [
+          "OperationResult seek(qint64 positionMs);",
+          "仅seekable允许；限制到0..duration"
+        ],
+        [
+          "OperationResult setVolume(int volume);",
+          "0..100；实时生效并保存，失败报告"
+        ],
+        [
+          "OperationResult remove(int index);",
+          "仅移除引用；非当前曲维持播放；当前曲停止并选相邻合法项"
+        ]
+      ],
+      "signals": [
+        "void musicChanged(fg::MusicSnapshot snapshot);",
+        "void errorOccurred(fg::AppError error);"
+      ]
+    },
+    "ICompletionSound": {
+      "implementation": "CompletionSound",
+      "owner": "D",
+      "dependencies": [
+        "ISettingsService"
+      ],
+      "methods": [
+        [
+          "void playForCompletedSession(const SessionId& sessionId);",
+          "A连接B已保存自然完成信号；读取开关，按sessionId抑制重复音效"
+        ]
+      ],
+      "signals": [
+        "void errorOccurred(fg::AppError error);"
+      ]
+    },
+    "CompletionCoordinator": {
+      "implementation": "CompletionCoordinator",
+      "owner": "A",
+      "dependencies": [
+        "IFocusEngine",
+        "IRewardService",
+        "IRepository"
+      ],
+      "methods": [
+        [
+          "void settle(fg::SessionId sessionId);",
+          "Qt slot；接B completionPersisted，调用C一次结算"
+        ],
+        [
+          "OperationResult retry(const SessionId& sessionId);",
+          "SaveFailed先B重试保存；Pending仅C重试结算"
+        ],
+        [
+          "OperationResult retryPending();",
+          "启动恢复后/进入Focus枚举已保存未结算记录；失败不循环轰炸提示"
+        ]
+      ],
+      "signals": [
+        "void settlementCompleted(fg::SettlementReceipt receipt);",
+        "void settlementFailed(fg::SessionId sessionId, fg::AppError error);"
+      ]
+    },
+    "AppServices": {
+      "implementation": "AppServices",
+      "owner": "A",
+      "dependencies": [
+        "ITaskService",
+        "IStatisticsService",
+        "IFocusEngine",
+        "IPetService",
+        "ISettingsService",
+        "IMusicController",
+        "CompletionCoordinator"
+      ],
+      "methods": [
+        [
+          "Result<QVector<Task>> listTasks(const TaskFilter& filter) const;",
+          "转B TaskManager"
+        ],
+        [
+          "Result<std::optional<Task>> task(TaskId id) const;",
+          "转B"
+        ],
+        [
+          "Result<Task> saveTask(const TaskDraft& draft, std::optional<TaskId> id);",
+          "转B；无默认参数省略，新增显式std::nullopt"
+        ],
+        [
+          "OperationResult setTaskDone(TaskId id, bool completed);",
+          "转B"
+        ],
+        [
+          "OperationResult softDeleteTask(TaskId id);",
+          "转B"
+        ],
+        [
+          "Result<QVector<Task>> todayTasks() const;",
+          "转B StatisticsService"
+        ],
+        [
+          "Result<StatisticsSnapshot> statistics() const;",
+          "转B StatisticsService"
+        ],
+        [
+          "FocusSnapshot focus() const;",
+          "转B snapshot"
+        ],
+        [
+          "std::optional<CompletionResult> lastCompletion() const;",
+          "转B"
+        ],
+        [
+          "OperationResult configureFocus(const FocusConfig& config);",
+          "转B configure"
+        ],
+        [
+          "OperationResult preselectFocusTask(TaskId id);",
+          "查任务后构造D默认时长配置；活动时返回冲突，A仍导航Focus"
+        ],
+        [
+          "OperationResult prepareNextRound(FocusMode mode);",
+          "转B；不自动开始"
+        ],
+        [
+          "Result<SessionId> startFocus();",
+          "转B start"
+        ],
+        [
+          "OperationResult pauseFocus(const SessionId& expectedSessionId);",
+          "转B pause"
+        ],
+        [
+          "OperationResult resumeFocus(const SessionId& expectedSessionId);",
+          "转B resume"
+        ],
+        [
+          "OperationResult abandonFocus(const SessionId& expectedSessionId);",
+          "转B abandon"
+        ],
+        [
+          "OperationResult retryFocusCompletion(const SessionId& sessionId);",
+          "转A Coordinator；禁止UI自己改金币"
+        ],
+        [
+          "Result<PetSnapshot> pet() const;",
+          "转C PetManager"
+        ],
+        [
+          "Result<FeedReceipt> feedPet();",
+          "转C feed"
+        ],
+        [
+          "Preferences preferences() const;",
+          "转D SettingsService"
+        ],
+        [
+          "OperationResult savePreferences(const Preferences& preferences);",
+          "转D"
+        ],
+        [
+          "IMusicController& music() const;",
+          "返回同一D播放器非拥有引用"
+        ],
+        [
+          "ModelMode modelMode() const;",
+          "只读Demo/Live标识"
+        ]
+      ],
+      "signals": [
+        "void dataChanged();",
+        "void focusChanged(fg::FocusSnapshot snapshot);",
+        "void preferencesChanged(fg::Preferences preferences);",
+        "void musicChanged(fg::MusicSnapshot snapshot);",
+        "void focusCompleted(fg::CompletionResult result);",
+        "void petLeveled(fg::FeedReceipt receipt);",
+        "void notice(QString message, fg::NoticeLevel level);"
+      ]
+    }
+  }
+}

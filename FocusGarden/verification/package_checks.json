@@ -1,0 +1,21 @@
+{
+  "_scope": "historical_UI_delivery_static_evidence_not_current_Qt_runtime_acceptance",
+  "stage": "UI engineering blueprint; no Qt source project delivered",
+  "mainPages": 7,
+  "parameterRecords": 509,
+  "stateProfiles": 18,
+  "assetFiles": 43,
+  "qrcFileEntries": 45,
+  "missingResources": [],
+  "svgXML": "PASS",
+  "pngIntegrity": "PASS",
+  "uniqueEnglishAssetNames": "PASS",
+  "prototypeScriptTests": {
+    "passed": 29,
+    "failed": 0,
+    "scope": "Node VM stubs, not browser rendering or real audio"
+  },
+  "QtBuild": "Deferred per user scope revision",
+  "QtRuntimeVisualAndDPI": "Deferred to next stage",
+  "noQtProjectSourcesIncluded": true
+}

@@ -1,0 +1,214 @@
+{
+  "id": "settings",
+  "kind": "v",
+  "children": [
+    {
+      "id": "settings.title",
+      "kind": "h",
+      "children": [
+        {
+          "id": "settings.heading",
+          "kind": "v",
+          "children": [
+            {
+              "id": "settings.titleText",
+              "kind": "label",
+              "text": "设置",
+              "role": "pageTitle"
+            },
+            {
+              "id": "settings.subtitle",
+              "kind": "label",
+              "text": "只保留真实实现、可保存并可验证的功能选项。",
+              "role": "muted"
+            }
+          ],
+          "stretch": 1,
+          "gap": 3
+        }
+      ],
+      "h": 59,
+      "compactH": 59,
+      "gap": 14
+    },
+    {
+      "id": "settings.body",
+      "kind": "h",
+      "children": [
+        {
+          "id": "settings.focus",
+          "kind": "v",
+          "children": [
+            {
+              "id": "settings.focus.heading",
+              "kind": "label",
+              "text": "专注偏好",
+              "role": "cardTitle"
+            },
+            {
+              "id": "settings.focusRow",
+              "kind": "h",
+              "children": [
+                {
+                  "id": "settings.focusCopy",
+                  "kind": "v",
+                  "children": [
+                    {
+                      "id": "settings.focusTitle",
+                      "kind": "label",
+                      "text": "默认专注时长",
+                      "role": "cardTitle"
+                    },
+                    {
+                      "id": "settings.focusHint",
+                      "kind": "label",
+                      "text": "只影响下一轮新建专注，不改变正在运行的计时。",
+                      "role": "muted"
+                    }
+                  ],
+                  "stretch": 1
+                },
+                {
+                  "id": "settings.focusMinutes",
+                  "kind": "combo",
+                  "items": [
+                    "25 分钟",
+                    "50 分钟"
+                  ],
+                  "w": 142
+                }
+              ],
+              "minH": 85
+            },
+            {
+              "id": "settings.restRow",
+              "kind": "h",
+              "children": [
+                {
+                  "id": "settings.restCopy",
+                  "kind": "v",
+                  "children": [
+                    {
+                      "id": "settings.restTitle",
+                      "kind": "label",
+                      "text": "默认休息时长",
+                      "role": "cardTitle"
+                    },
+                    {
+                      "id": "settings.restHint",
+                      "kind": "label",
+                      "text": "休息计时不会产生金币或有效专注。",
+                      "role": "muted"
+                    }
+                  ],
+                  "stretch": 1
+                },
+                {
+                  "id": "settings.restMinutes",
+                  "kind": "combo",
+                  "items": [
+                    "5 分钟",
+                    "10 分钟"
+                  ],
+                  "w": 142
+                }
+              ],
+              "minH": 85
+            },
+            {
+              "id": "settings.soundRow",
+              "kind": "h",
+              "children": [
+                {
+                  "id": "settings.soundCopy",
+                  "kind": "v",
+                  "children": [
+                    {
+                      "id": "settings.soundTitle",
+                      "kind": "label",
+                      "text": "完成提示音",
+                      "role": "cardTitle"
+                    },
+                    {
+                      "id": "settings.soundHint",
+                      "kind": "label",
+                      "text": "自然完成一轮专注时播放本地提示音。",
+                      "role": "muted"
+                    }
+                  ],
+                  "stretch": 1
+                },
+                {
+                  "id": "settings.sound",
+                  "kind": "check",
+                  "text": "启用"
+                }
+              ],
+              "minH": 85
+            }
+          ],
+          "role": "card",
+          "padding": 19,
+          "gap": 15,
+          "h": 387,
+          "stretch": 1
+        },
+        {
+          "id": "settings.data",
+          "kind": "v",
+          "children": [
+            {
+              "id": "settings.data.heading",
+              "kind": "label",
+              "text": "本地数据说明",
+              "role": "cardTitle"
+            },
+            {
+              "id": "settings.dataTitle",
+              "kind": "label",
+              "text": "数据仅保存在当前电脑",
+              "role": "cardTitle"
+            },
+            {
+              "id": "settings.dataHint",
+              "kind": "label",
+              "text": "当前 Starter 使用内存演示数据。正式版由 B 接入 SQLite 保存任务、专注记录、金币和宠物数据。设置使用 QSettings。",
+              "role": "muted"
+            },
+            {
+              "id": "settings.about",
+              "kind": "label",
+              "text": "关于应用",
+              "role": "cardTitle"
+            },
+            {
+              "id": "settings.appName",
+              "kind": "label",
+              "text": "软件名称    Focus Garden｜拾光岛",
+              "role": "body"
+            },
+            {
+              "id": "settings.version",
+              "kind": "label",
+              "text": "版本    V0.1 UI Starter",
+              "role": "body"
+            },
+            {
+              "id": "settings.team",
+              "kind": "label",
+              "text": "开发团队    高级语言编程实训四人小组",
+              "role": "body"
+            }
+          ],
+          "role": "card",
+          "padding": 19,
+          "gap": 15,
+          "h": 387,
+          "stretch": 1
+        }
+      ]
+    }
+  ],
+  "padding": 0,
+  "gap": 16
+}

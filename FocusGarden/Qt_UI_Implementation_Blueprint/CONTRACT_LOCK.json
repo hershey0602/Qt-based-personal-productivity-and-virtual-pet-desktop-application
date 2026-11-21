@@ -1,0 +1,18 @@
+{
+  "version": "FG-API-1.0",
+  "status": "text_frozen_not_cpp_compiled",
+  "stage": "all_required_real_functions_by_day_5",
+  "files": {
+    "API_CONTRACT.md": "827021e91a642f4dfa22574a546645b42fb0ea5ff7620b8fe99759a1ccf0083d",
+    "DATA_MODELS.md": "a1820b932816bdcf07d06bf50ad01552be478a27b3e2716f9b16f17fee18ae3f",
+    "API_REGISTRY.json": "cca9e0b81663ee9ba7c1f285e4918ef7739243d00150c0ea8f94f978ab106737",
+    "SIGNAL_SLOT_MATRIX.md": "821a6ef639f29443cf84569db9ad085ddd888f2fa4f267d00df990e5b524fc9a",
+    "UI_BINDING_CONTRACT.md": "321a9a82436f327a6d3bd19e80fad874e28a9f2d984c69a2ad057973f8c0e1e5",
+    "DATABASE_CONTRACT.md": "e70669dbd7f9fb77f8a8b44387f739d816252cbd8e72da661fd60bd2256645fc",
+    "SCHEMA_V1.sql": "1e2ed530fdbaa39b31a18e573bdc8461885fdd8090c85ed69cee844b86f5040c",
+    "STATE_MACHINES.md": "4ef3110337376826b5bf14b4037102f47d031095e57bb422d8a1caf63063ab0f",
+    "PROJECT_STRUCTURE.md": "699552c0e1f44cd47a7df0f4e22fa337525fbc5d33c6c4a98c93c51ccb7ff1f6",
+    "DEPENDENCY_MAP.md": "c4f20965ce5c7caa55475855c37fcf2eae946a072a422edfe4cd17aec65b9612",
+    "FILE_OWNERSHIP.json": "be399aa97b0e4cc7ae6ebf8b1f1fa52f64ed53d76d7ae5f3daecb68b786f4f7c"
+  }
+}

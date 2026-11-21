@@ -1,0 +1,122 @@
+{
+  "_scope": "historical_UI_delivery_static_evidence_not_current_Qt_runtime_acceptance",
+  "scope": "Node VM with DOM/Audio stubs; verifies script logic and scenario initialization, not browser rendering, Qt runtime or real audio",
+  "tests": [
+    {
+      "name": "场景初始化 task-add",
+      "result": "PASS"
+    },
+    {
+      "name": "场景初始化 task-edit",
+      "result": "PASS"
+    },
+    {
+      "name": "场景初始化 task-delete",
+      "result": "PASS"
+    },
+    {
+      "name": "场景初始化 task-unsaved",
+      "result": "PASS"
+    },
+    {
+      "name": "场景初始化 focus-running",
+      "result": "PASS"
+    },
+    {
+      "name": "场景初始化 focus-paused",
+      "result": "PASS"
+    },
+    {
+      "name": "场景初始化 focus-abandon",
+      "result": "PASS"
+    },
+    {
+      "name": "场景初始化 focus-exit",
+      "result": "PASS"
+    },
+    {
+      "name": "场景初始化 focus-completed",
+      "result": "PASS"
+    },
+    {
+      "name": "场景初始化 focus-save-failed",
+      "result": "PASS"
+    },
+    {
+      "name": "场景初始化 focus-reward-pending",
+      "result": "PASS"
+    },
+    {
+      "name": "场景初始化 focus-custom",
+      "result": "PASS"
+    },
+    {
+      "name": "场景初始化 focus-rest",
+      "result": "PASS"
+    },
+    {
+      "name": "场景初始化 task-empty",
+      "result": "PASS"
+    },
+    {
+      "name": "场景初始化 tasks-no-results",
+      "result": "PASS"
+    },
+    {
+      "name": "场景初始化 music-empty",
+      "result": "PASS"
+    },
+    {
+      "name": "场景初始化 pet-empty",
+      "result": "PASS"
+    },
+    {
+      "name": "场景初始化 pet-lv2",
+      "result": "PASS"
+    },
+    {
+      "name": "场景初始化 pet-lv3",
+      "result": "PASS"
+    },
+    {
+      "name": "场景初始化 pet-level-up",
+      "result": "PASS"
+    },
+    {
+      "name": "场景初始化 task-validation",
+      "result": "PASS"
+    },
+    {
+      "name": "标题搜索不匹配备注",
+      "result": "PASS"
+    },
+    {
+      "name": "SAVE_FAILED不可被快捷时长覆盖",
+      "result": "PASS"
+    },
+    {
+      "name": "待结算重试幂等",
+      "result": "PASS"
+    },
+    {
+      "name": "Lv3没有升级进度条",
+      "result": "PASS"
+    },
+    {
+      "name": "余额不足不扣币/经验",
+      "result": "PASS"
+    },
+    {
+      "name": "任务完成不发金币",
+      "result": "PASS"
+    },
+    {
+      "name": "休息完成无有效记录/金币",
+      "result": "PASS"
+    },
+    {
+      "name": "设置失败恢复原值",
+      "result": "PASS"
+    }
+  ]
+}

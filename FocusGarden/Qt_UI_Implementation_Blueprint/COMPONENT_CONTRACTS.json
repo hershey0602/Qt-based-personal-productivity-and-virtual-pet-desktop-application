@@ -1,0 +1,102 @@
+{
+  "stage": "Blueprint only; create these reusable widgets next stage",
+  "TaskRow": {
+    "type": "QFrame",
+    "minHeight": 73,
+    "radius": 14,
+    "padding": [
+      12,
+      11,
+      12,
+      11
+    ],
+    "spacing": 10,
+    "event": "row click selects task and updates read-only detail",
+    "children": {
+      "check": {
+        "type": "QCheckBox",
+        "indicator": [
+          16,
+          16
+        ]
+      },
+      "title": {
+        "type": "QLabel",
+        "fontPx": 13,
+        "weight": 700,
+        "overflow": "ElideRight",
+        "stretch": 1
+      },
+      "tags": {
+        "fontPx": 11,
+        "weight": 600
+      },
+      "actions": {
+        "layout": "QHBoxLayout",
+        "spacing": 5,
+        "buttons": [
+          "edit",
+          "delete",
+          "focus"
+        ],
+        "buttonProperty": {
+          "size": "small"
+        },
+        "buttonHeight": 30,
+        "iconPx": 18
+      }
+    }
+  },
+  "TimerRing": {
+    "diameter": 265,
+    "stroke": 19,
+    "time": {
+      "fontPx": 54,
+      "weight": 800,
+      "rect": [
+        0,
+        99,
+        265,
+        67
+      ]
+    },
+    "caption": {
+      "fontPx": 12,
+      "rect": [
+        0,
+        65,
+        265,
+        26
+      ]
+    },
+    "foot": {
+      "fontPx": 11,
+      "rect": [
+        0,
+        174,
+        265,
+        30
+      ]
+    },
+    "ownerObjectName": "focus_ring"
+  },
+  "Dialog": {
+    "taskWidth": 530,
+    "confirmResultWidth": 450,
+    "position": "floor((clientSize-dialogSize)/2)",
+    "frame": "native main window, custom modal content",
+    "margin": [
+      24,
+      20,
+      24,
+      19
+    ],
+    "bodySpacing": 14,
+    "footerSpacing": 10
+  },
+  "Icon": {
+    "navigationPx": 22,
+    "buttonPx": 18,
+    "tint": "primary button icon paint white using SourceIn; do not reference absent variants"
+  }
+}

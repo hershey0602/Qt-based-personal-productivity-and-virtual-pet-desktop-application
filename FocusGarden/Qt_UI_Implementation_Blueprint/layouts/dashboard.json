@@ -1,0 +1,377 @@
+{
+  "id": "dashboard",
+  "kind": "v",
+  "children": [
+    {
+      "id": "dashboard.title",
+      "kind": "h",
+      "children": [
+        {
+          "id": "dashboard.heading",
+          "kind": "v",
+          "children": [
+            {
+              "id": "dashboard.titleText",
+              "kind": "label",
+              "text": "学习总览",
+              "role": "pageTitle"
+            },
+            {
+              "id": "dashboard.subtitle",
+              "kind": "label",
+              "text": "计划今天的小目标，让布丁陪你一起进步。",
+              "role": "muted"
+            }
+          ],
+          "stretch": 1,
+          "gap": 3
+        }
+      ],
+      "h": 59,
+      "compactH": 59,
+      "gap": 14
+    },
+    {
+      "id": "dashboard.banner",
+      "kind": "h",
+      "children": [
+        {
+          "id": "dashboard.welcome",
+          "kind": "v",
+          "children": [
+            {
+              "id": "dashboard.greeting",
+              "kind": "label",
+              "text": "今天也向目标\n靠近一点 ☀",
+              "role": "bannerTitle"
+            },
+            {
+              "id": "dashboard.message",
+              "kind": "label",
+              "text": "整理待办 · 沉浸专注 · 收获成长",
+              "role": "muted"
+            },
+            {
+              "id": "dashboard.newTask",
+              "kind": "button",
+              "text": "新建任务",
+              "action": "task.add",
+              "role": "primary",
+              "icon": "add",
+              "maxW": 142
+            }
+          ],
+          "stretch": 1,
+          "gap": 10
+        },
+        {
+          "id": "dashboard.art",
+          "kind": "image",
+          "src": "illustrations/ill_study_garden.svg",
+          "w": 430,
+          "h": 160
+        }
+      ],
+      "role": "banner",
+      "h": 210,
+      "compactH": 176,
+      "padding": 28
+    },
+    {
+      "id": "dashboard.metrics",
+      "kind": "h",
+      "children": [
+        {
+          "id": "dashboard.metric1",
+          "kind": "h",
+          "children": [
+            {
+              "id": "dashboard.metric1.icon",
+              "kind": "image",
+              "src": "icons/ic_focus.svg",
+              "w": 49,
+              "h": 49
+            },
+            {
+              "id": "dashboard.metric1.text",
+              "kind": "v",
+              "children": [
+                {
+                  "id": "dashboard.metric1.label",
+                  "kind": "label",
+                  "text": "今日专注",
+                  "role": "muted"
+                },
+                {
+                  "id": "dashboard.metric1.value",
+                  "kind": "label",
+                  "text": "@today",
+                  "role": "metric"
+                }
+              ],
+              "stretch": 1,
+              "gap": 4
+            }
+          ],
+          "role": "metric",
+          "h": 105,
+          "padding": 19,
+          "gap": 14,
+          "stretch": 1
+        },
+        {
+          "id": "dashboard.metric2",
+          "kind": "h",
+          "children": [
+            {
+              "id": "dashboard.metric2.icon",
+              "kind": "image",
+              "src": "icons/ic_check.svg",
+              "w": 49,
+              "h": 49
+            },
+            {
+              "id": "dashboard.metric2.text",
+              "kind": "v",
+              "children": [
+                {
+                  "id": "dashboard.metric2.label",
+                  "kind": "label",
+                  "text": "已完成任务",
+                  "role": "muted"
+                },
+                {
+                  "id": "dashboard.metric2.value",
+                  "kind": "label",
+                  "text": "@taskRatio",
+                  "role": "metric"
+                }
+              ],
+              "stretch": 1,
+              "gap": 4
+            }
+          ],
+          "role": "metric",
+          "h": 105,
+          "padding": 19,
+          "gap": 14,
+          "stretch": 1
+        },
+        {
+          "id": "dashboard.metric3",
+          "kind": "h",
+          "children": [
+            {
+              "id": "dashboard.metric3.icon",
+              "kind": "image",
+              "src": "icons/ic_coin.svg",
+              "w": 49,
+              "h": 49
+            },
+            {
+              "id": "dashboard.metric3.text",
+              "kind": "v",
+              "children": [
+                {
+                  "id": "dashboard.metric3.label",
+                  "kind": "label",
+                  "text": "当前金币",
+                  "role": "muted"
+                },
+                {
+                  "id": "dashboard.metric3.value",
+                  "kind": "label",
+                  "text": "@coins",
+                  "role": "metric"
+                }
+              ],
+              "stretch": 1,
+              "gap": 4
+            }
+          ],
+          "role": "metric",
+          "h": 105,
+          "padding": 19,
+          "gap": 14,
+          "stretch": 1
+        }
+      ],
+      "h": 105
+    },
+    {
+      "id": "dashboard.mid",
+      "kind": "h",
+      "children": [
+        {
+          "id": "dashboard.todayTasks",
+          "kind": "v",
+          "children": [
+            {
+              "id": "dashboard.todayTasks.heading",
+              "kind": "label",
+              "text": "今日截止任务",
+              "role": "cardTitle"
+            },
+            {
+              "id": "dashboard.todayList",
+              "kind": "v",
+              "children": [],
+              "dynamic": "today",
+              "stretch": 1
+            },
+            {
+              "id": "dashboard.allTasks",
+              "kind": "button",
+              "text": "查看全部 →",
+              "action": "nav.tasks",
+              "role": "quiet"
+            }
+          ],
+          "role": "card",
+          "padding": 19,
+          "gap": 15,
+          "stretch": 108,
+          "h": 220
+        },
+        {
+          "id": "dashboard.weekChart",
+          "kind": "v",
+          "children": [
+            {
+              "id": "dashboard.weekChart.heading",
+              "kind": "label",
+              "text": "近七日专注",
+              "role": "cardTitle"
+            },
+            {
+              "id": "dashboard.chart",
+              "kind": "chart",
+              "h": 135
+            },
+            {
+              "id": "dashboard.allStats",
+              "kind": "button",
+              "text": "查看统计 →",
+              "action": "nav.statistics",
+              "role": "quiet"
+            }
+          ],
+          "role": "card",
+          "padding": 19,
+          "gap": 15,
+          "stretch": 92,
+          "h": 220
+        }
+      ]
+    },
+    {
+      "id": "dashboard.bottom",
+      "kind": "h",
+      "children": [
+        {
+          "id": "dashboard.pet",
+          "kind": "h",
+          "children": [
+            {
+              "id": "dashboard.petCopy",
+              "kind": "v",
+              "children": [
+                {
+                  "id": "dashboard.petHeading",
+                  "kind": "label",
+                  "text": "布丁的成长",
+                  "role": "cardTitle"
+                },
+                {
+                  "id": "dashboard.petStatus",
+                  "kind": "label",
+                  "text": "@petStatus",
+                  "role": "muted"
+                },
+                {
+                  "id": "dashboard.petCoins",
+                  "kind": "label",
+                  "text": "@coins",
+                  "role": "coin"
+                },
+                {
+                  "id": "dashboard.feed",
+                  "kind": "button",
+                  "text": "去喂养 →",
+                  "action": "nav.pet",
+                  "role": "soft",
+                  "maxW": 130
+                }
+              ],
+              "stretch": 1
+            },
+            {
+              "id": "dashboard.petArt",
+              "kind": "image",
+              "src": "pets/pet_buding_lv1.png",
+              "w": 160,
+              "h": 155
+            }
+          ],
+          "role": "petPreview",
+          "padding": 19,
+          "h": 195,
+          "stretch": 108
+        },
+        {
+          "id": "dashboard.quick",
+          "kind": "v",
+          "children": [
+            {
+              "id": "dashboard.quick.heading",
+              "kind": "label",
+              "text": "快速开始",
+              "role": "cardTitle"
+            },
+            {
+              "id": "dashboard.shortcuts",
+              "kind": "h",
+              "children": [
+                {
+                  "id": "dashboard.quick25",
+                  "kind": "button",
+                  "text": "专注 25 分钟",
+                  "action": "quick.25",
+                  "role": "yellow"
+                },
+                {
+                  "id": "dashboard.quick50",
+                  "kind": "button",
+                  "text": "专注 50 分钟",
+                  "action": "quick.50",
+                  "role": "outline"
+                },
+                {
+                  "id": "dashboard.music",
+                  "kind": "button",
+                  "text": "音乐",
+                  "action": "nav.music",
+                  "role": "outline",
+                  "icon": "music"
+                }
+              ]
+            },
+            {
+              "id": "dashboard.quickHint",
+              "kind": "label",
+              "text": "进入专注页后，可选择任务并点击「开始」。",
+              "role": "muted"
+            }
+          ],
+          "role": "card",
+          "padding": 19,
+          "gap": 15,
+          "h": 195,
+          "stretch": 92
+        }
+      ]
+    }
+  ],
+  "padding": 0,
+  "gap": 16
+}

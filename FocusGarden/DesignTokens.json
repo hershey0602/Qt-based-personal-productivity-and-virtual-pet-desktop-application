@@ -1,0 +1,82 @@
+{
+  "version": "2.1-qt1",
+  "units": "logical px",
+  "reference": [
+    1600,
+    900
+  ],
+  "minimum": [
+    1280,
+    720
+  ],
+  "colors": {
+    "bg": "#F7F8EC",
+    "shell": "#FAFBF5",
+    "sidebar": "#F6F7E6",
+    "surface": "#FFFFFF",
+    "surface-soft": "#FBFCF6",
+    "mint": "#EDF6E8",
+    "mint-strong": "#D5EDCF",
+    "leaf": "#5F9F64",
+    "leaf-hover": "#4D8D53",
+    "leaf-pressed": "#37773F",
+    "yellow": "#F6DD8C",
+    "yellow-light": "#FFF5D6",
+    "yellow-hover": "#EECF70",
+    "orange": "#E7A852",
+    "title": "#263E2B",
+    "body": "#3F5041",
+    "muted": "#778575",
+    "border": "#E5EBDD",
+    "danger": "#C15B54",
+    "danger-light": "#FFF0EE",
+    "warning": "#B47B26",
+    "success": "#3B9351"
+  },
+  "typography": {
+    "family": [
+      "Microsoft YaHei",
+      "Noto Sans CJK SC",
+      "sans-serif"
+    ],
+    "bodyPx": 14,
+    "pageTitlePx": 27,
+    "cardTitlePx": 16,
+    "metricPx": 28,
+    "timerPx": 54,
+    "lineHeight": 1.52,
+    "note": "Qt 单行按字体度量；多行 QLabel 用 QTextDocument/自动换行，不伪造 QSS line-height"
+  },
+  "layout": {
+    "outer": 18,
+    "sidebar": 218,
+    "header": 74,
+    "pagePadding": 24,
+    "gap": 16,
+    "cardPadding": 19,
+    "compact": {
+      "maxWidth": 1366,
+      "outer": 10,
+      "sidebar": 188,
+      "pagePadding": 18,
+      "gap": 12,
+      "cardPadding": 15
+    }
+  },
+  "radius": {
+    "card": 20,
+    "input": 12,
+    "nav": 13,
+    "task": 14,
+    "dialog": 20
+  },
+  "shadow": {
+    "blur": 26,
+    "offset": [
+      0,
+      8
+    ],
+    "color": "#0E37532D",
+    "enabled": "cards only; measured separately from layout geometry"
+  }
+}

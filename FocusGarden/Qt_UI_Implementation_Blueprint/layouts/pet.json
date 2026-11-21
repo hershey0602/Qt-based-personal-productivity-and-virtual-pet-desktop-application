@@ -1,0 +1,294 @@
+{
+  "id": "pet",
+  "kind": "v",
+  "children": [
+    {
+      "id": "pet.title",
+      "kind": "h",
+      "children": [
+        {
+          "id": "pet.heading",
+          "kind": "v",
+          "children": [
+            {
+              "id": "pet.titleText",
+              "kind": "label",
+              "text": "宠物小屋",
+              "role": "pageTitle"
+            },
+            {
+              "id": "pet.subtitle",
+              "kind": "label",
+              "text": "专注让布丁成长，金币只能通过有效专注获得。",
+              "role": "muted"
+            }
+          ],
+          "stretch": 1,
+          "gap": 3
+        }
+      ],
+      "h": 59,
+      "compactH": 59,
+      "gap": 14
+    },
+    {
+      "id": "pet.body",
+      "kind": "h",
+      "children": [
+        {
+          "id": "pet.hero",
+          "kind": "h",
+          "children": [
+            {
+              "id": "pet.info",
+              "kind": "v",
+              "children": [
+                {
+                  "id": "pet.unique",
+                  "kind": "label",
+                  "text": "唯一伙伴",
+                  "role": "tagYellow"
+                },
+                {
+                  "id": "pet.name",
+                  "kind": "label",
+                  "text": "布丁",
+                  "role": "petTitle"
+                },
+                {
+                  "id": "pet.levelTag",
+                  "kind": "label",
+                  "text": "@level",
+                  "role": "tag"
+                },
+                {
+                  "id": "pet.mood",
+                  "kind": "label",
+                  "text": "@mood",
+                  "role": "body"
+                },
+                {
+                  "id": "pet.coins",
+                  "kind": "label",
+                  "text": "@coins",
+                  "role": "coin"
+                }
+              ],
+              "stretch": 1
+            },
+            {
+              "id": "pet.art",
+              "kind": "image",
+              "src": "pets/pet_buding_lv1.png",
+              "w": 340,
+              "h": 315
+            }
+          ],
+          "role": "petHero",
+          "padding": 25,
+          "h": 360,
+          "stretch": 130
+        },
+        {
+          "id": "pet.feed",
+          "kind": "v",
+          "children": [
+            {
+              "id": "pet.feed.heading",
+              "kind": "label",
+              "text": "互动与照顾",
+              "role": "cardTitle"
+            },
+            {
+              "id": "pet.feedTitle",
+              "kind": "label",
+              "text": "喂食布丁",
+              "role": "cardTitle"
+            },
+            {
+              "id": "pet.feedHint",
+              "kind": "label",
+              "text": "每次消耗 15 金币 · 获得 10 EXP · 心情 +15",
+              "role": "muted"
+            },
+            {
+              "id": "pet.carrot",
+              "kind": "image",
+              "src": "icons/ic_carrot.svg",
+              "w": 110,
+              "h": 120
+            },
+            {
+              "id": "pet.feedButton",
+              "kind": "button",
+              "text": "喂食（-15 金币）",
+              "action": "pet.feed",
+              "role": "primary"
+            },
+            {
+              "id": "pet.feedFootnote",
+              "kind": "label",
+              "text": "专注获得金币，喂食帮助布丁成长。",
+              "role": "muted"
+            }
+          ],
+          "role": "card",
+          "padding": 19,
+          "gap": 15,
+          "h": 429,
+          "stretch": 70
+        }
+      ]
+    },
+    {
+      "id": "pet.metrics",
+      "kind": "h",
+      "children": [
+        {
+          "id": "pet.metric1",
+          "kind": "h",
+          "children": [
+            {
+              "id": "pet.metric1.icon",
+              "kind": "image",
+              "src": "icons/ic_pet.svg",
+              "w": 49,
+              "h": 49
+            },
+            {
+              "id": "pet.metric1.text",
+              "kind": "v",
+              "children": [
+                {
+                  "id": "pet.metric1.label",
+                  "kind": "label",
+                  "text": "当前等级",
+                  "role": "muted"
+                },
+                {
+                  "id": "pet.metric1.value",
+                  "kind": "label",
+                  "text": "@level",
+                  "role": "metric"
+                }
+              ],
+              "stretch": 1,
+              "gap": 4
+            }
+          ],
+          "role": "metric",
+          "h": 105,
+          "padding": 19,
+          "gap": 14,
+          "stretch": 1
+        },
+        {
+          "id": "pet.metric2",
+          "kind": "h",
+          "children": [
+            {
+              "id": "pet.metric2.icon",
+              "kind": "image",
+              "src": "icons/ic_star.svg",
+              "w": 49,
+              "h": 49
+            },
+            {
+              "id": "pet.metric2.text",
+              "kind": "v",
+              "children": [
+                {
+                  "id": "pet.metric2.label",
+                  "kind": "label",
+                  "text": "累计经验",
+                  "role": "muted"
+                },
+                {
+                  "id": "pet.metric2.value",
+                  "kind": "label",
+                  "text": "@exp",
+                  "role": "metric"
+                }
+              ],
+              "stretch": 1,
+              "gap": 4
+            }
+          ],
+          "role": "metric",
+          "h": 105,
+          "padding": 19,
+          "gap": 14,
+          "stretch": 1
+        },
+        {
+          "id": "pet.metric3",
+          "kind": "h",
+          "children": [
+            {
+              "id": "pet.metric3.icon",
+              "kind": "image",
+              "src": "icons/ic_heart.svg",
+              "w": 49,
+              "h": 49
+            },
+            {
+              "id": "pet.metric3.text",
+              "kind": "v",
+              "children": [
+                {
+                  "id": "pet.metric3.label",
+                  "kind": "label",
+                  "text": "心情值",
+                  "role": "muted"
+                },
+                {
+                  "id": "pet.metric3.value",
+                  "kind": "label",
+                  "text": "@moodValue",
+                  "role": "metric"
+                }
+              ],
+              "stretch": 1,
+              "gap": 4
+            }
+          ],
+          "role": "metric",
+          "h": 105,
+          "padding": 19,
+          "gap": 14,
+          "stretch": 1
+        }
+      ],
+      "h": 105
+    },
+    {
+      "id": "pet.experience",
+      "kind": "v",
+      "children": [
+        {
+          "id": "pet.experience.heading",
+          "kind": "label",
+          "text": "成长进度",
+          "role": "cardTitle"
+        },
+        {
+          "id": "pet.expText",
+          "kind": "label",
+          "text": "@expText",
+          "role": "muted"
+        },
+        {
+          "id": "pet.progress",
+          "kind": "progress",
+          "h": 11
+        }
+      ],
+      "role": "card",
+      "padding": 19,
+      "gap": 15,
+      "h": 124
+    }
+  ],
+  "padding": 0,
+  "gap": 16
+}

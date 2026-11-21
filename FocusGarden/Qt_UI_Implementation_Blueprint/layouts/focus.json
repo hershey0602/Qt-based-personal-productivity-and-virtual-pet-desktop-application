@@ -1,0 +1,298 @@
+{
+  "id": "focus",
+  "kind": "v",
+  "children": [
+    {
+      "id": "focus.title",
+      "kind": "h",
+      "children": [
+        {
+          "id": "focus.heading",
+          "kind": "v",
+          "children": [
+            {
+              "id": "focus.titleText",
+              "kind": "label",
+              "text": "专注空间",
+              "role": "pageTitle"
+            },
+            {
+              "id": "focus.subtitle",
+              "kind": "label",
+              "text": "一次只专注一件事，结束后再领取金币。",
+              "role": "muted"
+            }
+          ],
+          "stretch": 1,
+          "gap": 3
+        }
+      ],
+      "h": 59,
+      "compactH": 59,
+      "gap": 14
+    },
+    {
+      "id": "focus.body",
+      "kind": "h",
+      "children": [
+        {
+          "id": "focus.timerPanel",
+          "kind": "v",
+          "children": [
+            {
+              "id": "focus.selectRow",
+              "kind": "h",
+              "children": [
+                {
+                  "id": "focus.taskField",
+                  "kind": "v",
+                  "children": [
+                    {
+                      "id": "focus.taskLabel",
+                      "kind": "label",
+                      "text": "当前关联任务",
+                      "role": "muted"
+                    },
+                    {
+                      "id": "focus.task",
+                      "kind": "combo",
+                      "items": [
+                        "不关联任务"
+                      ]
+                    }
+                  ],
+                  "stretch": 1,
+                  "maxW": 440,
+                  "gap": 6
+                },
+                {
+                  "id": "focus.state",
+                  "kind": "label",
+                  "text": "待开始",
+                  "role": "tag"
+                }
+              ]
+            },
+            {
+              "id": "focus.mode",
+              "kind": "h",
+              "children": [
+                {
+                  "id": "focus.mode25",
+                  "kind": "button",
+                  "text": "专注 25 分钟",
+                  "action": "mode.25",
+                  "role": "pill"
+                },
+                {
+                  "id": "focus.mode50",
+                  "kind": "button",
+                  "text": "专注 50 分钟",
+                  "action": "mode.50",
+                  "role": "pill"
+                },
+                {
+                  "id": "focus.custom",
+                  "kind": "button",
+                  "text": "自定义",
+                  "action": "mode.custom",
+                  "role": "pill"
+                },
+                {
+                  "id": "focus.rest",
+                  "kind": "button",
+                  "text": "休息 5 分钟",
+                  "action": "mode.rest",
+                  "role": "pill"
+                }
+              ],
+              "align": "center",
+              "h": 40
+            },
+            {
+              "id": "focus.customMinutes",
+              "kind": "combo",
+              "items": [
+                "15",
+                "20",
+                "25",
+                "30",
+                "35",
+                "40",
+                "45",
+                "50",
+                "55",
+                "60",
+                "65",
+                "70",
+                "75",
+                "80",
+                "85",
+                "90"
+              ],
+              "maxW": 120,
+              "hidden": true
+            },
+            {
+              "id": "focus.ring",
+              "kind": "ring",
+              "w": 265,
+              "h": 265,
+              "align": "center"
+            },
+            {
+              "id": "focus.controls",
+              "kind": "h",
+              "children": [
+                {
+                  "id": "focus.start",
+                  "kind": "button",
+                  "text": "开始",
+                  "action": "focus.start",
+                  "role": "primary",
+                  "icon": "play"
+                },
+                {
+                  "id": "focus.pause",
+                  "kind": "button",
+                  "text": "暂停",
+                  "action": "focus.pause",
+                  "role": "outline",
+                  "icon": "pause"
+                },
+                {
+                  "id": "focus.resume",
+                  "kind": "button",
+                  "text": "继续",
+                  "action": "focus.resume",
+                  "role": "soft",
+                  "icon": "play"
+                },
+                {
+                  "id": "focus.abandon",
+                  "kind": "button",
+                  "text": "放弃",
+                  "action": "focus.abandon",
+                  "role": "danger"
+                }
+              ],
+              "align": "center"
+            },
+            {
+              "id": "focus.errorRow",
+              "kind": "h",
+              "children": [
+                {
+                  "id": "focus.error",
+                  "kind": "label",
+                  "text": "专注记录保存失败，请重试。",
+                  "role": "error",
+                  "stretch": 1
+                },
+                {
+                  "id": "focus.retry",
+                  "kind": "button",
+                  "text": "重试保存",
+                  "action": "focus.retry",
+                  "role": "primary"
+                }
+              ],
+              "hidden": true
+            },
+            {
+              "id": "focus.hint",
+              "kind": "label",
+              "text": "切换页面不停止计时 · 模式与任务在计时中锁定",
+              "role": "muted",
+              "align": "center"
+            }
+          ],
+          "role": "focusPanel",
+          "padding": 19,
+          "gap": 12,
+          "minH": 515,
+          "stretch": 135
+        },
+        {
+          "id": "focus.aside",
+          "kind": "v",
+          "children": [
+            {
+              "id": "focus.todayHistory",
+              "kind": "v",
+              "children": [
+                {
+                  "id": "focus.todayHistory.heading",
+                  "kind": "label",
+                  "text": "今日专注记录",
+                  "role": "cardTitle"
+                },
+                {
+                  "id": "focus.historyRows",
+                  "kind": "v",
+                  "children": [],
+                  "dynamic": "focusHistory"
+                },
+                {
+                  "id": "focus.viewHistory",
+                  "kind": "button",
+                  "text": "查看完整记录 →",
+                  "action": "nav.statistics",
+                  "role": "quiet"
+                }
+              ],
+              "role": "card",
+              "padding": 19,
+              "gap": 15,
+              "minH": 126
+            },
+            {
+              "id": "focus.reward",
+              "kind": "v",
+              "children": [
+                {
+                  "id": "focus.reward.heading",
+                  "kind": "label",
+                  "text": "本次预计奖励",
+                  "role": "cardTitle"
+                },
+                {
+                  "id": "focus.rewardValue",
+                  "kind": "label",
+                  "text": "20 金币",
+                  "role": "metric"
+                },
+                {
+                  "id": "focus.rewardHint",
+                  "kind": "label",
+                  "text": "只有自然完成专注才发放奖励，休息和放弃都不发金币。",
+                  "role": "muted"
+                },
+                {
+                  "id": "focus.cheer",
+                  "kind": "label",
+                  "text": "布丁：专心完成这一轮吧！",
+                  "role": "muted"
+                },
+                {
+                  "id": "focus.petArt",
+                  "kind": "image",
+                  "src": "pets/pet_buding_lv1.png",
+                  "w": 180,
+                  "h": 122
+                }
+              ],
+              "role": "card",
+              "padding": 19,
+              "gap": 15,
+              "minH": 331
+            }
+          ],
+          "stretch": 65
+        }
+      ]
+    }
+  ],
+  "padding": 0,
+  "gap": 16
+}

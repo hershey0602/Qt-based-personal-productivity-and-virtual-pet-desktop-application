@@ -1,0 +1,280 @@
+{
+  "id": "tasks",
+  "kind": "v",
+  "children": [
+    {
+      "id": "tasks.title",
+      "kind": "h",
+      "children": [
+        {
+          "id": "tasks.heading",
+          "kind": "v",
+          "children": [
+            {
+              "id": "tasks.titleText",
+              "kind": "label",
+              "text": "任务管理",
+              "role": "pageTitle"
+            },
+            {
+              "id": "tasks.subtitle",
+              "kind": "label",
+              "text": "一站式管理学习、工作与生活待办。",
+              "role": "muted"
+            }
+          ],
+          "stretch": 1,
+          "gap": 3
+        },
+        {
+          "id": "tasks.add",
+          "kind": "button",
+          "text": "新建任务",
+          "action": "task.add",
+          "role": "primary",
+          "icon": "add"
+        }
+      ],
+      "h": 59,
+      "compactH": 59,
+      "gap": 14
+    },
+    {
+      "id": "tasks.metrics",
+      "kind": "h",
+      "children": [
+        {
+          "id": "tasks.metric1",
+          "kind": "h",
+          "children": [
+            {
+              "id": "tasks.metric1.icon",
+              "kind": "image",
+              "src": "icons/ic_tasks.svg",
+              "w": 49,
+              "h": 49
+            },
+            {
+              "id": "tasks.metric1.text",
+              "kind": "v",
+              "children": [
+                {
+                  "id": "tasks.metric1.label",
+                  "kind": "label",
+                  "text": "任务总数",
+                  "role": "muted"
+                },
+                {
+                  "id": "tasks.metric1.value",
+                  "kind": "label",
+                  "text": "@taskCount",
+                  "role": "metric"
+                }
+              ],
+              "stretch": 1,
+              "gap": 4
+            }
+          ],
+          "role": "metric",
+          "h": 105,
+          "padding": 19,
+          "gap": 14,
+          "stretch": 1
+        },
+        {
+          "id": "tasks.metric2",
+          "kind": "h",
+          "children": [
+            {
+              "id": "tasks.metric2.icon",
+              "kind": "image",
+              "src": "icons/ic_check.svg",
+              "w": 49,
+              "h": 49
+            },
+            {
+              "id": "tasks.metric2.text",
+              "kind": "v",
+              "children": [
+                {
+                  "id": "tasks.metric2.label",
+                  "kind": "label",
+                  "text": "已完成",
+                  "role": "muted"
+                },
+                {
+                  "id": "tasks.metric2.value",
+                  "kind": "label",
+                  "text": "@taskDone",
+                  "role": "metric"
+                }
+              ],
+              "stretch": 1,
+              "gap": 4
+            }
+          ],
+          "role": "metric",
+          "h": 105,
+          "padding": 19,
+          "gap": 14,
+          "stretch": 1
+        },
+        {
+          "id": "tasks.metric3",
+          "kind": "h",
+          "children": [
+            {
+              "id": "tasks.metric3.icon",
+              "kind": "image",
+              "src": "icons/ic_statistics.svg",
+              "w": 49,
+              "h": 49
+            },
+            {
+              "id": "tasks.metric3.text",
+              "kind": "v",
+              "children": [
+                {
+                  "id": "tasks.metric3.label",
+                  "kind": "label",
+                  "text": "完成率",
+                  "role": "muted"
+                },
+                {
+                  "id": "tasks.metric3.value",
+                  "kind": "label",
+                  "text": "@completion",
+                  "role": "metric"
+                }
+              ],
+              "stretch": 1,
+              "gap": 4
+            }
+          ],
+          "role": "metric",
+          "h": 105,
+          "padding": 19,
+          "gap": 14,
+          "stretch": 1
+        }
+      ],
+      "h": 105
+    },
+    {
+      "id": "tasks.filters",
+      "kind": "h",
+      "children": [
+        {
+          "id": "tasks.search",
+          "kind": "line",
+          "placeholder": "搜索任务标题…",
+          "stretch": 15
+        },
+        {
+          "id": "tasks.category",
+          "kind": "combo",
+          "items": [
+            "全部分类",
+            "学习",
+            "工作",
+            "生活"
+          ],
+          "stretch": 8
+        },
+        {
+          "id": "tasks.priority",
+          "kind": "combo",
+          "items": [
+            "全部优先级",
+            "高",
+            "中",
+            "低"
+          ],
+          "stretch": 8
+        },
+        {
+          "id": "tasks.status",
+          "kind": "combo",
+          "items": [
+            "全部状态",
+            "未完成",
+            "已完成"
+          ],
+          "stretch": 8
+        },
+        {
+          "id": "tasks.clear",
+          "kind": "button",
+          "text": "清除筛选",
+          "action": "task.clear",
+          "role": "outline"
+        }
+      ],
+      "h": 40,
+      "gap": 10
+    },
+    {
+      "id": "tasks.body",
+      "kind": "h",
+      "children": [
+        {
+          "id": "tasks.list",
+          "kind": "v",
+          "children": [
+            {
+              "id": "tasks.list.heading",
+              "kind": "label",
+              "text": "任务列表",
+              "role": "cardTitle"
+            },
+            {
+              "id": "tasks.rows",
+              "kind": "v",
+              "children": [],
+              "dynamic": "tasks",
+              "stretch": 1
+            }
+          ],
+          "role": "card",
+          "padding": 19,
+          "gap": 15,
+          "h": 449,
+          "stretch": 150
+        },
+        {
+          "id": "tasks.detail",
+          "kind": "v",
+          "children": [
+            {
+              "id": "tasks.detail.heading",
+              "kind": "label",
+              "text": "任务详情",
+              "role": "cardTitle"
+            },
+            {
+              "id": "tasks.readonly",
+              "kind": "label",
+              "text": "只读",
+              "role": "tag"
+            },
+            {
+              "id": "tasks.fields",
+              "kind": "v",
+              "children": [],
+              "dynamic": "detail",
+              "stretch": 1,
+              "gap": 4
+            }
+          ],
+          "role": "card",
+          "padding": 19,
+          "gap": 15,
+          "h": 449,
+          "stretch": 85
+        }
+      ]
+    }
+  ],
+  "padding": 0,
+  "gap": 16
+}

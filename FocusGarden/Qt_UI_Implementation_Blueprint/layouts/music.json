@@ -1,0 +1,234 @@
+{
+  "id": "music",
+  "kind": "v",
+  "children": [
+    {
+      "id": "music.title",
+      "kind": "h",
+      "children": [
+        {
+          "id": "music.heading",
+          "kind": "v",
+          "children": [
+            {
+              "id": "music.titleText",
+              "kind": "label",
+              "text": "音乐陪伴",
+              "role": "pageTitle"
+            },
+            {
+              "id": "music.subtitle",
+              "kind": "label",
+              "text": "仅播放本地音乐，离开页面后播放状态保持。",
+              "role": "muted"
+            }
+          ],
+          "stretch": 1,
+          "gap": 3
+        },
+        {
+          "id": "music.add",
+          "kind": "button",
+          "text": "添加本地音乐",
+          "action": "music.import",
+          "role": "primary",
+          "icon": "add"
+        }
+      ],
+      "h": 59,
+      "compactH": 59,
+      "gap": 14
+    },
+    {
+      "id": "music.body",
+      "kind": "h",
+      "children": [
+        {
+          "id": "music.playlist",
+          "kind": "v",
+          "children": [
+            {
+              "id": "music.playlist.heading",
+              "kind": "label",
+              "text": "本地播放列表",
+              "role": "cardTitle"
+            },
+            {
+              "id": "music.list",
+              "kind": "list",
+              "minH": 310,
+              "stretch": 1
+            },
+            {
+              "id": "music.empty",
+              "kind": "label",
+              "text": "还没有音乐，点击「添加本地音乐」导入电脑中的音频文件。",
+              "role": "muted"
+            },
+            {
+              "id": "music.import",
+              "kind": "button",
+              "text": "添加本地音乐",
+              "action": "music.import",
+              "role": "soft",
+              "icon": "add"
+            },
+            {
+              "id": "music.remove",
+              "kind": "button",
+              "text": "移除选中曲目",
+              "action": "music.remove",
+              "role": "outline"
+            }
+          ],
+          "role": "card",
+          "padding": 19,
+          "gap": 15,
+          "h": 580,
+          "stretch": 86
+        },
+        {
+          "id": "music.right",
+          "kind": "v",
+          "children": [
+            {
+              "id": "music.player",
+              "kind": "v",
+              "children": [
+                {
+                  "id": "music.player.heading",
+                  "kind": "label",
+                  "text": "正在播放",
+                  "role": "cardTitle"
+                },
+                {
+                  "id": "music.album",
+                  "kind": "image",
+                  "src": "icons/ic_music.svg",
+                  "w": 180,
+                  "h": 180,
+                  "align": "center"
+                },
+                {
+                  "id": "music.track",
+                  "kind": "label",
+                  "text": "尚未选择音频",
+                  "role": "cardTitle",
+                  "align": "center",
+                  "h": 30
+                },
+                {
+                  "id": "music.trackHint",
+                  "kind": "label",
+                  "text": "添加音乐后可以在这里播放",
+                  "role": "muted",
+                  "align": "center",
+                  "h": 20
+                },
+                {
+                  "id": "music.seek",
+                  "kind": "slider",
+                  "max": 1
+                },
+                {
+                  "id": "music.timeRow",
+                  "kind": "h",
+                  "children": [
+                    {
+                      "id": "music.position",
+                      "kind": "label",
+                      "text": "00:00",
+                      "role": "muted",
+                      "stretch": 1
+                    },
+                    {
+                      "id": "music.duration",
+                      "kind": "label",
+                      "text": "00:00",
+                      "role": "muted"
+                    }
+                  ],
+                  "h": 20
+                },
+                {
+                  "id": "music.controls",
+                  "kind": "h",
+                  "children": [
+                    {
+                      "id": "music.previous",
+                      "kind": "button",
+                      "text": "上一首",
+                      "action": "music.previous",
+                      "role": "outline",
+                      "icon": "previous"
+                    },
+                    {
+                      "id": "music.play",
+                      "kind": "button",
+                      "text": "播放",
+                      "action": "music.play",
+                      "role": "primary",
+                      "icon": "play"
+                    },
+                    {
+                      "id": "music.stop",
+                      "kind": "button",
+                      "text": "停止",
+                      "action": "music.stop",
+                      "role": "outline",
+                      "icon": "stop"
+                    },
+                    {
+                      "id": "music.next",
+                      "kind": "button",
+                      "text": "下一首",
+                      "action": "music.next",
+                      "role": "outline",
+                      "icon": "next"
+                    }
+                  ],
+                  "align": "center"
+                }
+              ],
+              "role": "card",
+              "padding": 19,
+              "gap": 7,
+              "h": 450
+            },
+            {
+              "id": "music.volume",
+              "kind": "v",
+              "children": [
+                {
+                  "id": "music.volume.heading",
+                  "kind": "label",
+                  "text": "音量",
+                  "role": "cardTitle"
+                },
+                {
+                  "id": "music.volumeSlider",
+                  "kind": "slider",
+                  "value": 70,
+                  "max": 100
+                },
+                {
+                  "id": "music.volumeHint",
+                  "kind": "label",
+                  "text": "仅播放用户导入的本地音频。",
+                  "role": "muted"
+                }
+              ],
+              "role": "card",
+              "padding": 19,
+              "gap": 4,
+              "h": 114
+            }
+          ],
+          "stretch": 114
+        }
+      ]
+    }
+  ],
+  "padding": 0,
+  "gap": 16
+}

@@ -1,0 +1,30 @@
+{
+  "_scope": "historical_UI_delivery_static_evidence_not_current_Qt_runtime_acceptance",
+  "revision": "D owns Music and Settings, tests and deployment",
+  "checks": {
+    "ownershipJSON": "PASS",
+    "A_D_prompts": "PASS",
+    "API_owners": "PASS",
+    "Word_ownership": "PASS",
+    "geometry_styles_assets_prototype_unchanged": "PASS",
+    "B_C_module_instructions_unchanged": "PASS",
+    "noQtProjectGenerated": "PASS"
+  },
+  "changedExistingFiles": [
+    "UI_完整开发规范.docx",
+    "四人开发提示词与模块说明.docx",
+    "README.md",
+    "Qt_UI_Implementation_Blueprint/API_CONTRACT.md",
+    "Qt_UI_Implementation_Blueprint/PROJECT_STRUCTURE.md",
+    "Qt_UI_Implementation_Blueprint/START_HERE.md",
+    "Qt_UI_Implementation_Blueprint/FILE_OWNERSHIP.json",
+    "Qt_UI_Implementation_Blueprint/ACCEPTANCE_PLAN.md",
+    "Qt_UI_Implementation_Blueprint/SIGNAL_SLOT_MATRIX.md",
+    "team/D.md",
+    "team/INTEGRATION_ORDER.md",
+    "team/A.md",
+    "team/SHARED_AI_PROMPT.md",
+    "docs/DIFFERENCES_AND_IMPLEMENTATION.md"
+  ],
+  "addedRevisionNote": "docs/OWNERSHIP_REVISION.md"
+}
