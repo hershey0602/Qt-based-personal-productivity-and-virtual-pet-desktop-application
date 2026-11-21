@@ -1,0 +1,5 @@
+#include "ConfirmDialog.h"
+namespace fg {
+ConfirmDialog::ConfirmDialog(const QString& title,const QString& body,const QString& text,QWidget* parent):QDialog(parent){setWindowTitle(title);setProperty("role","dialog");setMinimumWidth(440);auto l=new QVBoxLayout(this);l->setContentsMargins(24,24,24,24);auto h=new QLabel(title);h->setProperty("role","dialogTitle");l->addWidget(h);auto b=new QLabel(body);b->setWordWrap(true);l->addWidget(b);error_=new QLabel;error_->setWordWrap(true);error_->setProperty("role","error");l->addWidget(error_);auto row=new QHBoxLayout;auto cancel=createButton("confirm.cancel",QStringLiteral("取消"),ButtonRole::Outline);auto ok=createButton("confirm.submit",text,ButtonRole::Primary);row->addStretch();row->addWidget(cancel);row->addWidget(ok);l->addLayout(row);connect(cancel,&QPushButton::clicked,this,&QDialog::reject);connect(ok,&QPushButton::clicked,this,[this]{if(action_){auto r=action_();if(!r.ok){error_->setText(r.error.message);return;}}accept();});}
+void ConfirmDialog::setCommitAction(std::function<fg::OperationResult()> a){action_=std::move(a);}
+}
