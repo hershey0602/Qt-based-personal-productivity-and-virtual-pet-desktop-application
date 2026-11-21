@@ -1,0 +1,14 @@
+# A在创建真实仓库/公共工程时转为根.gitignore；当前不是Qt工程
+本地归档/
+build*/
+**/build*/
+**/CMakeFiles/
+**/CMakeCache.txt
+**/*.user
+**/*.user.*
+**/*.db
+**/*.sqlite
+**/*.sqlite-*
+**/app.ini
+**/deploy-output/
+**/release-output/

@@ -1,0 +1,178 @@
+[
+  {
+    "check": "QRC引用",
+    "passed": true,
+    "detail": {
+      "count": 45,
+      "missing": []
+    }
+  },
+  {
+    "check": "原有真实素材内容保留",
+    "passed": true,
+    "detail": {
+      "count": 43,
+      "changed": [],
+      "types": {
+        ".svg": 39,
+        ".png": 3,
+        ".wav": 1
+      }
+    }
+  },
+  {
+    "check": "SVG可解析",
+    "passed": true,
+    "detail": "39 SVG XML解析通过；不等价QtSvg实际加载"
+  },
+  {
+    "check": "保留视觉基线 DesignTokens.json",
+    "passed": true,
+    "detail": "SHA256与原交付一致"
+  },
+  {
+    "check": "保留视觉基线 main.qss",
+    "passed": true,
+    "detail": "SHA256与原交付一致"
+  },
+  {
+    "check": "保留视觉基线 resources.qrc",
+    "passed": true,
+    "detail": "SHA256与原交付一致"
+  },
+  {
+    "check": "保留视觉基线 七个页面与弹窗的组件参数表.xlsx",
+    "passed": true,
+    "detail": "SHA256与原交付一致"
+  },
+  {
+    "check": "保留视觉基线 prototype/FocusGarden_Interactive_Prototype_V2.1.html",
+    "passed": true,
+    "detail": "SHA256与原交付一致"
+  },
+  {
+    "check": "API注册表与契约签名",
+    "passed": true,
+    "detail": {
+      "classes": 11,
+      "methods": 86,
+      "signalDeclarations": 26,
+      "missing": []
+    }
+  },
+  {
+    "check": "服务构造依赖无环",
+    "passed": true,
+    "detail": {
+      "cycles": [],
+      "note": "静态依赖图，非C++运行证明"
+    }
+  },
+  {
+    "check": "文件修改主责不重叠",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "check": "Settings页面与服务归D",
+    "passed": true,
+    "detail": "A仅初始占位与装配；基线后D接管"
+  },
+  {
+    "check": "角色A当前AI输入可定位",
+    "passed": true,
+    "detail": {
+      "currentCount": 24,
+      "missing": [],
+      "futureExplicitTargets": 12
+    }
+  },
+  {
+    "check": "角色B当前AI输入可定位",
+    "passed": true,
+    "detail": {
+      "currentCount": 26,
+      "missing": [],
+      "futureExplicitTargets": 15
+    }
+  },
+  {
+    "check": "角色C当前AI输入可定位",
+    "passed": true,
+    "detail": {
+      "currentCount": 25,
+      "missing": [],
+      "futureExplicitTargets": 9
+    }
+  },
+  {
+    "check": "角色D当前AI输入可定位",
+    "passed": true,
+    "detail": {
+      "currentCount": 26,
+      "missing": [],
+      "futureExplicitTargets": 11
+    }
+  },
+  {
+    "check": "PRD责任覆盖唯一",
+    "passed": true,
+    "detail": {
+      "rows": 114,
+      "unique": 114
+    }
+  },
+  {
+    "check": "PRD实际编号逐条匹配",
+    "passed": true,
+    "detail": {
+      "sourceIds": 114,
+      "missing": [],
+      "extra": []
+    }
+  },
+  {
+    "check": "未创建Qt工程",
+    "passed": true,
+    "detail": "实际C++/CMake均未生成；SQL仅为蓝图"
+  },
+  {
+    "check": "中文Markdown入口链接",
+    "passed": true,
+    "detail": {
+      "links": 61,
+      "broken": [],
+      "docxPendingGeneration": []
+    }
+  },
+  {
+    "check": "SQL蓝图内存冒烟",
+    "passed": true,
+    "detail": [
+      {
+        "case": "DDL/外键/初始宠物",
+        "passed": true
+      },
+      {
+        "case": "同session重复奖励被唯一索引拒绝",
+        "passed": true
+      },
+      {
+        "case": "故障注入整笔事务回滚",
+        "passed": true
+      },
+      {
+        "case": "喂食快照NULL被拒绝",
+        "passed": true
+      },
+      {
+        "case": "有效喂食同事务与OperationId唯一",
+        "passed": true
+      },
+      {
+        "case": "不存在session外键拒绝",
+        "passed": true
+      }
+    ]
+  }
+]

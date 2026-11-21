@@ -1,0 +1,29 @@
+{
+  "scope": "in-memory schema checks only, not Qt Repository/C++ validation",
+  "tests": [
+    {
+      "case": "DDL/外键/初始宠物",
+      "passed": true
+    },
+    {
+      "case": "同session重复奖励被唯一索引拒绝",
+      "passed": true
+    },
+    {
+      "case": "故障注入整笔事务回滚",
+      "passed": true
+    },
+    {
+      "case": "喂食快照NULL被拒绝",
+      "passed": true
+    },
+    {
+      "case": "有效喂食同事务与OperationId唯一",
+      "passed": true
+    },
+    {
+      "case": "不存在session外键拒绝",
+      "passed": true
+    }
+  ]
+}

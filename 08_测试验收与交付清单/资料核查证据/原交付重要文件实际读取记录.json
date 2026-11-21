@@ -1,0 +1,97 @@
+[
+  {
+    "file": "docs/SOURCE_PRD.txt",
+    "status": "已实际读取",
+    "sha256": "d4e4dac13cf2537eb4f8be855293a616d6e7f23481ca7a620b1de58e161f139c"
+  },
+  {
+    "file": "prototype/FocusGarden_Interactive_Prototype_V2.1.html",
+    "status": "已实际读取",
+    "sha256": "74381508bb3a555c0f1aae38a3f904931ff3cd8453e6309ba4c30bc90b732f5c"
+  },
+  {
+    "file": "UI_完整开发规范.docx",
+    "status": "已实际读取",
+    "sha256": "e762cc68e318adc618c4d3d2fb61f0e40e96d85a7e23e64be3cb97ae1174ef6d"
+  },
+  {
+    "file": "四人开发提示词与模块说明.docx",
+    "status": "已实际读取",
+    "sha256": "a2ad5fa5e92dd3554ab6a23ca785aed75d83f1194c40f83394831176bf316fe8"
+  },
+  {
+    "file": "team/A.md",
+    "status": "已实际读取",
+    "sha256": "2115f6a3131c674581a6e1e61f00f5c159f834d857f2bd3eac84473c0bd22d07"
+  },
+  {
+    "file": "team/B.md",
+    "status": "已实际读取",
+    "sha256": "e3002c583e020c7f30db5b07e36c618568d288131873e8353dfde01bc6573676"
+  },
+  {
+    "file": "team/C.md",
+    "status": "已实际读取",
+    "sha256": "f0f94ee4fda1b6d98bc23dccf89f3d73cd37d4869b5f866a1005df90cae21d68"
+  },
+  {
+    "file": "team/D.md",
+    "status": "已实际读取",
+    "sha256": "9fd7a5b6dc24f665b2ca337bcabcdcf2e31c2781e79447e2d5a957f26bfa5d01"
+  },
+  {
+    "file": "team/SHARED_AI_PROMPT.md",
+    "status": "已实际读取",
+    "sha256": "9a0763ec1fc00b6be89d4aa39e7dad61f33638d576d1d8da4398963cbb17f355"
+  },
+  {
+    "file": "team/INTEGRATION_ORDER.md",
+    "status": "已实际读取",
+    "sha256": "0d815e4e1999a11f6cb2613f8f610947799998fc9f58c08e4d69443d0bff6a31"
+  },
+  {
+    "file": "Qt_UI_Implementation_Blueprint/API_CONTRACT.md",
+    "status": "已实际读取",
+    "sha256": "f013036530c75e354aa10ded0634ffcce69e29647cd94235d337a2c132562e62"
+  },
+  {
+    "file": "Qt_UI_Implementation_Blueprint/SIGNAL_SLOT_MATRIX.md",
+    "status": "已实际读取",
+    "sha256": "34aaf2195fee1fd8102cc71cc90631d926923a38c8b4abd6e8f7c6c2086fd2d7"
+  },
+  {
+    "file": "Qt_UI_Implementation_Blueprint/STATE_MACHINES.md",
+    "status": "已实际读取",
+    "sha256": "1a5dd64ac97ccbde4d0f46cd3ffb39dcf189bbd33203943bc9bf526b79f27af7"
+  },
+  {
+    "file": "Qt_UI_Implementation_Blueprint/PROJECT_STRUCTURE.md",
+    "status": "已实际读取",
+    "sha256": "57a6c36959da8a2471ef94a019d839cdc690592c259c4685fe00d98117a2994d"
+  },
+  {
+    "file": "Qt_UI_Implementation_Blueprint/FILE_OWNERSHIP.json",
+    "status": "已实际读取",
+    "sha256": "0ef00c2f42196444dae6a88d64445f4ff26365093167f781075f059076b0bd14"
+  },
+  {
+    "file": "DesignTokens.json",
+    "status": "已实际读取",
+    "sha256": "55b3e2ce98ea5242b43e164200fa4ff78ee2e79cc7bf70a2b9aea8cdd3e0ca44"
+  },
+  {
+    "file": "UI_COMPONENTS.md",
+    "status": "已实际读取",
+    "sha256": "0f043f72d7c25c6fa9de76319c9e1ef515cd89146c257083dd6465c26fe4d854"
+  },
+  {
+    "file": "resources.qrc",
+    "status": "已实际读取",
+    "sha256": "8939e8891d6af18f7241094d0d85c7da320bb0af9f611e635476946310c940b9"
+  },
+  {
+    "file": "README.md",
+    "status": "已实际读取",
+    "sha256": "4235fc924fd17d811746cb6768264573017f5eefb75e7df88c7dd75380ea8954"
+  }
+]

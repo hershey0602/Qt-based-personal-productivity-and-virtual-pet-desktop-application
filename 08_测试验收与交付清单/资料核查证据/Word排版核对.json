@@ -1,0 +1,55 @@
+{
+  "documents": [
+    {
+      "document": "00_先看我_文件使用总指南",
+      "pages": 6,
+      "outOfBoundsPages": []
+    },
+    {
+      "document": "01_共享接口核查与冻结报告",
+      "pages": 6,
+      "outOfBoundsPages": []
+    },
+    {
+      "document": "A_队长_主窗口与总览_完整任务书",
+      "pages": 14,
+      "outOfBoundsPages": []
+    },
+    {
+      "document": "B_任务专注统计与数据库_完整任务书",
+      "pages": 16,
+      "outOfBoundsPages": []
+    },
+    {
+      "document": "C_宠物金币与成长_完整任务书",
+      "pages": 11,
+      "outOfBoundsPages": []
+    },
+    {
+      "document": "D_音乐设置测试与部署_完整任务书",
+      "pages": 13,
+      "outOfBoundsPages": []
+    },
+    {
+      "document": "GitHub资料分发与协作说明",
+      "pages": 3,
+      "outOfBoundsPages": []
+    },
+    {
+      "document": "UI_完整开发规范",
+      "pages": 15,
+      "outOfBoundsPages": []
+    },
+    {
+      "document": "一个月阶段验收计划",
+      "pages": 3,
+      "outOfBoundsPages": []
+    },
+    {
+      "document": "队长第1天操作手册",
+      "pages": 5,
+      "outOfBoundsPages": []
+    }
+  ],
+  "scope": "DOCX renderer/PDF bounds and page image visual review; not Qt screenshot validation"
+}
