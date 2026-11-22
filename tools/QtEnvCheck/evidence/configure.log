@@ -1,0 +1,42 @@
+-- The CXX compiler identification is GNU 13.1.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: <MINGW_BIN>/g++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Performing Test HAVE_STDATOMIC
+-- Performing Test HAVE_STDATOMIC - Success
+-- Found WrapAtomic: TRUE
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Environment locked: Qt 6.11.2, GCC 13.1.0, CMake 3.30.5, C++17, x64
+-- Configuring done (4.3s)
+WARNING: Preprocessor definitions containing '#' may not be passed on the compiler command line because many compilers do not support it.
+CMake is dropping a preprocessor definition: QT_TESTCASE_BUILDDIR="<BUILD_DIR>"
+Consider defining the macro in a (configured) header file.
+
+WARNING: Preprocessor definitions containing '#' may not be passed on the compiler command line because many compilers do not support it.
+CMake is dropping a preprocessor definition: QT_TESTCASE_BUILDDIR="<BUILD_DIR>"
+Consider defining the macro in a (configured) header file.
+
+WARNING: Preprocessor definitions containing '#' may not be passed on the compiler command line because many compilers do not support it.
+CMake is dropping a preprocessor definition: QT_TESTCASE_BUILDDIR="<BUILD_DIR>"
+Consider defining the macro in a (configured) header file.
+
+WARNING: Preprocessor definitions containing '#' may not be passed on the compiler command line because many compilers do not support it.
+CMake is dropping a preprocessor definition: QT_TESTCASE_BUILDDIR="<BUILD_DIR>"
+Consider defining the macro in a (configured) header file.
+
+WARNING: Preprocessor definitions containing '#' may not be passed on the compiler command line because many compilers do not support it.
+CMake is dropping a preprocessor definition: QT_TESTCASE_BUILDDIR="<BUILD_DIR>"
+Consider defining the macro in a (configured) header file.
+
+WARNING: Preprocessor definitions containing '#' may not be passed on the compiler command line because many compilers do not support it.
+CMake is dropping a preprocessor definition: QT_TESTCASE_BUILDDIR="<BUILD_DIR>"
+Consider defining the macro in a (configured) header file.
+
+-- Generating done (0.7s)
+-- Build files have been written to: <BUILD_DIR>
+

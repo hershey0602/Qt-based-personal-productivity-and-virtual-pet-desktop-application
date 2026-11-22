@@ -1,0 +1,41 @@
+Start testing: Nov 22 17:51 �й���׼ʱ��
+----------------------------------------------------------
+1/2 Testing: QtEnvCheck.Unit
+1/2 Test: QtEnvCheck.Unit
+Command: "<BUILD_DIR>/QtEnvCheckTests.exe" "-o" "-,txt"
+Directory: <BUILD_DIR>
+"QtEnvCheck.Unit" start time: Nov 22 17:51 �й���׼ʱ��
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.54 sec
+----------------------------------------------------------
+Test Passed.
+"QtEnvCheck.Unit" end time: Nov 22 17:51 �й���׼ʱ��
+"QtEnvCheck.Unit" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: QtEnvCheck.Window
+2/2 Test: QtEnvCheck.Window
+Command: "<BUILD_DIR>/QtEnvCheck.exe" "--self-test"
+Directory: <BUILD_DIR>
+"QtEnvCheck.Window" start time: Nov 22 17:51 �й���׼ʱ��
+Output:
+----------------------------------------------------------
+Compile Qt=6.11.2 Runtime Qt=6.11.2
+PASS | Widgets | 桌面窗口已创建并显示
+PASS | Svg | 内置 SVG 加载、渲染及像素检查成功；左侧显示渲染结果
+PASS | Sql / SQLite | 内存数据库建表、参数写入、条件查询及中文回读成功
+PASS | Multimedia | QMediaPlayer / QAudioOutput 创建、关联及解除关联成功（未执行音频播放）
+PASS | Test | Qt Test 真实断言与信号捕获测试通过
+OVERALL PASS
+<end of output>
+Test time =   0.71 sec
+----------------------------------------------------------
+Test Passed.
+"QtEnvCheck.Window" end time: Nov 22 17:51 �й���׼ʱ��
+"QtEnvCheck.Window" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 22 17:51 �й���׼ʱ��
+

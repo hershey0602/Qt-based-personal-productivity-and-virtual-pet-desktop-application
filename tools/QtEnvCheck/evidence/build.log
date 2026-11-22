@@ -1,0 +1,15 @@
+[1/14] Automatic MOC for target envchecks
+[2/14] Automatic RCC for resources.qrc
+[3/14] Building CXX object CMakeFiles/envchecks.dir/envchecks_autogen/mocs_compilation.cpp.obj
+[4/14] Building CXX object CMakeFiles/envchecks.dir/envchecks_autogen/EWIEGA46WW/qrc_resources.cpp.obj
+[5/14] Building CXX object CMakeFiles/envchecks.dir/src/checks.cpp.obj
+[6/14] Linking CXX static library libenvchecks.a
+[7/14] Automatic MOC for target QtEnvCheck
+[8/14] Building CXX object CMakeFiles/QtEnvCheck.dir/QtEnvCheck_autogen/mocs_compilation.cpp.obj
+[9/14] Automatic MOC for target QtEnvCheckTests
+[10/14] Building CXX object CMakeFiles/QtEnvCheckTests.dir/QtEnvCheckTests_autogen/mocs_compilation.cpp.obj
+[11/14] Building CXX object CMakeFiles/QtEnvCheck.dir/src/main.cpp.obj
+[12/14] Linking CXX executable QtEnvCheck.exe
+[13/14] Building CXX object CMakeFiles/QtEnvCheckTests.dir/tests/tst_envcheck.cpp.obj
+[14/14] Linking CXX executable QtEnvCheckTests.exe
+

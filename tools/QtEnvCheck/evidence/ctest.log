@@ -1,0 +1,42 @@
+Internal ctest changing into directory: <BUILD_DIR>
+UpdateCTestConfiguration  from :<BUILD_DIR>/DartConfiguration.tcl
+UpdateCTestConfiguration  from :<BUILD_DIR>/DartConfiguration.tcl
+Test project <BUILD_DIR>
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+    Start 1: QtEnvCheck.Unit
+
+1: Test command: <BUILD_DIR>/QtEnvCheckTests.exe "-o" "-,txt"
+1: Working Directory: <BUILD_DIR>
+1: Environment variable modifications: 
+1:  PATH=path_list_prepend:<QT_PREFIX>/bin
+1:  PATH=path_list_prepend:<MINGW_BIN>
+1: Test timeout computed to be: 60
+1/2 Test #1: QtEnvCheck.Unit ..................   Passed    0.54 sec
+test 2
+    Start 2: QtEnvCheck.Window
+
+2: Test command: <BUILD_DIR>/QtEnvCheck.exe "--self-test"
+2: Working Directory: <BUILD_DIR>
+2: Environment variable modifications: 
+2:  PATH=path_list_prepend:<QT_PREFIX>/bin
+2:  PATH=path_list_prepend:<MINGW_BIN>
+2: Test timeout computed to be: 60
+2: Compile Qt=6.11.2 Runtime Qt=6.11.2
+2: PASS | Widgets | 桌面窗口已创建并显示
+2: PASS | Svg | 内置 SVG 加载、渲染及像素检查成功；左侧显示渲染结果
+2: PASS | Sql / SQLite | 内存数据库建表、参数写入、条件查询及中文回读成功
+2: PASS | Multimedia | QMediaPlayer / QAudioOutput 创建、关联及解除关联成功（未执行音频播放）
+2: PASS | Test | Qt Test 真实断言与信号捕获测试通过
+2: OVERALL PASS
+2/2 Test #2: QtEnvCheck.Window ................   Passed    0.71 sec
+
+100% tests passed, 0 tests failed out of 2
+
+Total Test time (real) =   1.32 sec
+

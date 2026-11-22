@@ -1,0 +1,25 @@
+[1/14] Automatic MOC for target envchecks
+FAILED: envchecks_autogen/timestamp envchecks_autogen/mocs_compilation.cpp <WORKSPACE>/tools/QtEnvCheck/build/envchecks_autogen/timestamp <WORKSPACE>/tools/QtEnvCheck/build/envchecks_autogen/mocs_compilation.cpp 
+C:/Windows/system32/cmd.exe /C "cd /D <WORKSPACE>/tools/QtEnvCheck/build && <CMAKE_BIN>/cmake.exe -E cmake_autogen <WORKSPACE>/tools/QtEnvCheck/build/CMakeFiles/envchecks_autogen.dir/AutogenInfo.json Debug && <CMAKE_BIN>/cmake.exe -E touch <WORKSPACE>/tools/QtEnvCheck/build/envchecks_autogen/timestamp && <CMAKE_BIN>/cmake.exe -E cmake_transform_depfile Ninja gccdepfile <WORKSPACE>/tools/QtEnvCheck <WORKSPACE>/tools/QtEnvCheck <WORKSPACE>/tools/QtEnvCheck/build <WORKSPACE>/tools/QtEnvCheck/build <WORKSPACE>/tools/QtEnvCheck/build/envchecks_autogen/deps <WORKSPACE>/tools/QtEnvCheck/build/CMakeFiles/d/021c2b79d899ff0645c6b4c122227f72eac9d8020ed6ccea62ad076373ca9631.d"
+
+AutoMoc subprocess error
+------------------------
+The moc process failed to compile
+  "SRC:/src/checks.cpp"
+into
+  "SRC:/build/envchecks_autogen/include/checks.moc"
+included by
+  "SRC:/src/checks.cpp"
+Process failed with return value 1
+
+Command
+-------
+<QT_PREFIX>/bin/moc.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_SQL_LIB -DQT_SVG_LIB "-DQT_TESTCASE_BUILDDIR=/"<WORKSPACE>/tools/QtEnvCheck/build/"" "-DQT_TESTCASE_SOURCEDIR=/"<WORKSPACE>/tools/QtEnvCheck/"" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -I<QT_PREFIX>/include/QtWidgets -I<QT_PREFIX>/include -I<QT_PREFIX>/include/QtCore -I<QT_PREFIX>/mkspecs/win32-g++ -I<QT_PREFIX>/include/QtGui -I<QT_PREFIX>/include/QtSvg -I<QT_PREFIX>/include/QtMultimedia -I<QT_PREFIX>/include/QtNetwork -I<QT_PREFIX>/include/QtSql -I<QT_PREFIX>/include/QtTest -I<MINGW_ROOT>/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -I<MINGW_ROOT>/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -I<MINGW_ROOT>/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -I<MINGW_ROOT>/lib/gcc/x86_64-w64-mingw32/13.1.0/include -I<MINGW_ROOT>/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -I<MINGW_ROOT>/x86_64-w64-mingw32/include --include <WORKSPACE>/tools/QtEnvCheck/build/envchecks_autogen/moc_predefs.h --output-dep-file -o <WORKSPACE>/tools/QtEnvCheck/build/envchecks_autogen/include/checks.moc <WORKSPACE>/tools/QtEnvCheck/src/checks.cpp
+
+Output
+------
+moc: Cannot create <WORKSPACE>/tools/QtEnvCheck/build/envchecks_autogen/include/checks.moc. Error: No such file or directory
+
+
+ninja: build stopped: subcommand failed.
+
