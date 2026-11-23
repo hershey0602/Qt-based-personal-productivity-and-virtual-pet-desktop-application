@@ -10,5 +10,7 @@ Result<std::optional<Task>> task(TaskId id) const override;
 Result<Task> saveTask(const TaskDraft& draft, std::optional<TaskId> id) override;
 OperationResult setTaskDone(TaskId id, bool completed) override;
 OperationResult softDeleteTask(TaskId id) override;
+private:
+ IRepository& repository_;
 };
 }

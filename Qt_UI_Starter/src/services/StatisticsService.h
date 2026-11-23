@@ -7,5 +7,7 @@ public:
  explicit StatisticsService(IRepository& repository, QObject* parent=nullptr);
 Result<StatisticsSnapshot> statistics() const override;
 Result<QVector<Task>> todayTasks() const override;
+private:
+ IRepository& repository_;
 };
 }

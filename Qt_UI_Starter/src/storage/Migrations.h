@@ -1,2 +1,14 @@
 #pragma once
-namespace fg { class Migrations {}; } // B接管：按SCHEMA_V1实现迁移
+
+#include <QSqlDatabase>
+#include <QString>
+
+namespace fg {
+
+class Migrations
+{
+public:
+    static bool apply(QSqlDatabase& database, QString* diagnostic = nullptr);
+};
+
+} // namespace fg

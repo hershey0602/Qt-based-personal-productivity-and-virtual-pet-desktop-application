@@ -1,10 +1,16 @@
 #pragma once
 #include "contracts/ServicePorts.h"
+
+#include <QSqlDatabase>
+
+class QSqlQuery;
+
 namespace fg {
 class Repository : public IRepository {
  Q_OBJECT
 public:
  explicit Repository(QObject* parent=nullptr);
+ ~Repository() override;
 OperationResult open(const QString& databasePath) override;
 OperationResult close() override;
 Result<QVector<Task>> listTasks(const TaskFilter& filter) const override;
@@ -26,5 +32,23 @@ Result<StatisticsSnapshot> statistics(const QDate& anchorDate) const override;
 Result<PetSnapshot> petSnapshot() const override;
 Result<SettlementReceipt> creditRewardAtomically(const RewardCreditRequest& request) override;
 Result<FeedReceipt> feedPetAtomically(const FeedCommand& command) override;
+
+private:
+ AppError error(AppErrorCode code, const QString& message, const QString& diagnostic = {}) const;
+ OperationResult failure(AppErrorCode code, const QString& message, const QString& diagnostic = {}) const;
+ bool ready(QString* diagnostic = nullptr) const;
+ bool validTaskDraft(const TaskDraft& draft, QString* message) const;
+ static QString timestamp(const QDateTime& value);
+ static QDateTime parseTimestamp(const QVariant& value);
+ static std::optional<QDate> parseDate(const QVariant& value);
+ static QString escapeLike(const QString& value);
+ static int levelForExp(qint64 exp);
+ Task taskFromQuery(const QSqlQuery& query) const;
+ FocusSession sessionFromQuery(const QSqlQuery& query) const;
+ PetSnapshot petSnapshotUnlocked(QString* diagnostic = nullptr) const;
+
+ mutable QSqlDatabase m_database;
+ QString m_connectionName;
+ bool m_open = false;
 };
 }
