@@ -12,7 +12,7 @@
 | Qt | 6.11.2 mingw_64 |
 | 生成器 | MinGW Makefiles |
 | 分支 | `feature/D-music-settings` |
-| 提交 SHA | **待补**（尚未 commit） |
+| 提交 SHA | `6115291`（feat(D): 实现音乐播放、设置持久化与完成音效） |
 
 ## 逐项结果
 
