@@ -1,0 +1,19 @@
+********* Start testing of fg::DServiceVerify *********
+Config: Using QtTest library 6.11.2, Qt 6.11.2 (x86_64-little_endian-llp64 shared (dynamic) release build; by GCC 13.1.0), windows 11
+PASS   : fg::DServiceVerify::initTestCase()
+QINFO  : fg::DServiceVerify::d_t01_loadAndPlayWav() qt.multimedia.ffmpeg: Using Qt multimedia with FFmpeg version 7.1.5 LGPL version 2.1 or later
+PASS   : fg::DServiceVerify::d_t01_loadAndPlayWav()
+PASS   : fg::DServiceVerify::d_t02_pauseAndStop()
+QWARN  : fg::DServiceVerify::d_t03_previousNextWrap() qt.multimedia.ffmpeg.mediadataholder: Could not open media. FFmpeg error description: Immediate exit requested
+QWARN  : fg::DServiceVerify::d_t03_previousNextWrap() qt.multimedia.ffmpeg.mediadataholder: Could not open media. FFmpeg error description: Immediate exit requested
+QWARN  : fg::DServiceVerify::d_t03_previousNextWrap() qt.multimedia.ffmpeg.mediadataholder: Could not open media. FFmpeg error description: Immediate exit requested
+PASS   : fg::DServiceVerify::d_t03_previousNextWrap()
+PASS   : fg::DServiceVerify::d_t04_seekAndVolume()
+QWARN  : fg::DServiceVerify::d_t05_badPathSingleError() qt.multimedia.ffmpeg.mediadataholder: Could not open media. FFmpeg error description: Invalid data found when processing input
+PASS   : fg::DServiceVerify::d_t05_badPathSingleError()
+PASS   : fg::DServiceVerify::d_t06_rebuildRestoresWithoutAutoplay()
+PASS   : fg::DServiceVerify::d_t07_preferencesPersist()
+PASS   : fg::DServiceVerify::d_t09_completionSoundSwitchAndDedup()
+PASS   : fg::DServiceVerify::cleanupTestCase()
+Totals: 10 passed, 0 failed, 0 skipped, 0 blacklisted, 2965ms
+********* Finished testing of fg::DServiceVerify *********

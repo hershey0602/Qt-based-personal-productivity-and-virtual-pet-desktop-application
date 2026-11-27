@@ -1,0 +1,16 @@
+Input #0, wav, from 'C:/Users/xuruo/AppData/Local/Temp/d_service_verify-albflz/verify-1.wav':
+  Duration: 00:00:00.50, bitrate: 353 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 22050 Hz, 1 channels, s16, 352 kb/s
+[h264_mf @ 00000202bbe1f180] MFT name: 'H264 Encoder MFT'
+[hevc_mf @ 00000202bbe1f180] MFT name: 'HEVCVideoExtensionEncoder'
+Input #0, wav, from 'C:/Users/xuruo/AppData/Local/Temp/d_service_verify-albflz/verify-1.wav':
+  Duration: 00:00:00.50, bitrate: 353 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 22050 Hz, 1 channels, s16, 352 kb/s
+[wav @ 00000202bbe06ac0] Could not find codec parameters for stream 0 (Audio: pcm_s16le ([1][0][0][0] / 0x0001), 22050 Hz, 1 channels, 352 kb/s): unspecified sample format
+Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options
+Input #0, wav, from 'C:/Users/xuruo/AppData/Local/Temp/d_service_verify-albflz/verify-1.wav':
+  Duration: 00:00:00.50, bitrate: 353 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 22050 Hz, 1 channels, 352 kb/s
+Input #0, wav, from 'C:/Users/xuruo/AppData/Local/Temp/d_service_verify-albflz/verify-1.wav':
+  Duration: 00:00:00.50, bitrate: 353 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 22050 Hz, 1 channels, s16, 352 kb/s
