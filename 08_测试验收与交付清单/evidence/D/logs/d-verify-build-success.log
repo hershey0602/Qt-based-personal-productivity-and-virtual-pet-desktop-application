@@ -1,0 +1,23 @@
+# D 服务级验证工程 —— 构建成功日志
+# 时间：2026-11-27
+# 命令：
+#   set PATH=C:\Qt\Tools\mingw1310_64\bin;C:\Qt\6.11.2\mingw_64\bin;%PATH%
+#   C:\Qt\Tools\CMake_64\bin\cmake.exe -S Qt_UI_Starter\tests\d\verify -B build\d-verify ^
+#       -G "MinGW Makefiles" ^
+#       -DCMAKE_MAKE_PROGRAM=C:/Qt/Tools/mingw1310_64/bin/mingw32-make.exe ^
+#       -DCMAKE_CXX_COMPILER=C:/Qt/Tools/mingw1310_64/bin/g++.exe ^
+#       -DCMAKE_PREFIX_PATH=C:/Qt/6.11.2/mingw_64
+#   C:\Qt\Tools\mingw1310_64\bin\mingw32-make.exe -j4
+# configure exit = 0
+# build     exit = 0
+
+--- stdout ---
+[  0%] Built target d_service_verify_autogen_timestamp_deps
+[ 11%] Automatic MOC for target d_service_verify
+[ 11%] Built target d_service_verify_autogen
+[ 22%] Building CXX object CMakeFiles/d_service_verify.dir/d_service_verify_autogen/mocs_compilation.cpp.obj
+[ 33%] Linking CXX executable d_service_verify.exe
+[100%] Built target d_service_verify
+
+--- stderr ---
+（空，无警告与错误）

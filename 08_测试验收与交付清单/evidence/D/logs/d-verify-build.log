@@ -1,0 +1,32 @@
+﻿[  0%] Built target d_service_verify_autogen_timestamp_deps
+[  7%] Automatic MOC for target d_service_verify
+[  7%] Built target d_service_verify_autogen
+[ 15%] Building CXX object CMakeFiles/d_service_verify.dir/verify_services.cpp.obj
+[ 23%] Building CXX object CMakeFiles/d_service_verify.dir/D_/qt_project/focusgarden/Qt_UI_Starter/src/ui/Components.cpp.obj
+[ 30%] Building CXX object CMakeFiles/d_service_verify.dir/D_/qt_project/focusgarden/Qt_UI_Starter/src/services/AppServices.cpp.obj
+[ 38%] Building CXX object CMakeFiles/d_service_verify.dir/D_/qt_project/focusgarden/Qt_UI_Starter/src/services/CompletionCoordinator.cpp.obj
+cmake.exe : mingw32-make.exe[2]: *** [CMakeFiles\d_service_verify.dir\build.make:218: CMakeFiles/d_service_verify.dir/D
+_/qt_project/focusgarden/Qt_UI_Starter/src/ui/Components.cpp.obj] Error 1
+所在位置 行:17 字符: 1
++ & C:\Qt\Tools\CMake_64\bin\cmake.exe --build "$r\build\d-verify" -j 4 ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (mingw32-make.ex...pp.obj] Error 1:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+mingw32-make.exe[2]: *** Waiting for unfinished jobs....
+mingw32-make.exe[2]: *** [CMakeFiles\d_service_verify.dir\build.make:143: CMakeFiles/d_service_verify.dir/verify_servic
+es.cpp.obj] Error 1
+mingw32-make.exe[2]: *** [CMakeFiles\d_service_verify.dir\build.make:233: CMakeFiles/d_service_verify.dir/D_/qt_project
+/focusgarden/Qt_UI_Starter/src/services/AppServices.cpp.obj] Error 1
+mingw32-make.exe[2]: *** [CMakeFiles\d_service_verify.dir\build.make:248: CMakeFiles/d_service_verify.dir/D_/qt_project
+/focusgarden/Qt_UI_Starter/src/services/CompletionCoordinator.cpp.obj] Error 1
+mingw32-make.exe[1]: *** [CMakeFiles\Makefile2:85: CMakeFiles/d_service_verify.dir/all] Error 2
+mingw32-make.exe: *** [Makefile:100: all] Error 2
+[  0%] Built target d_service_verify_autogen_timestamp_deps
+[ 11%] Automatic MOC for target d_service_verify
+[ 11%] Built target d_service_verify_autogen
+[ 22%] Building CXX object CMakeFiles/d_service_verify.dir/d_service_verify_autogen/mocs_compilation.cpp.obj
+[ 33%] Linking CXX executable d_service_verify.exe
+[100%] Built target d_service_verify
+
+--- stderr (empty = 无错误) ---
