@@ -12,6 +12,7 @@
 | 6 | CMake 生成器参数含空格易被拆开 | `cmake -S ... -B ... -G MinGW Makefiles` 未加引号 | 报 `Ignoring extra path from command line: "Makefiles"`，配置退出码 1 | 参数需作为单个 token 传入（`-G "MinGW Makefiles"`） | D（已在文档中固化） | 已规避 |
 | 7 | 验证工程曾误纳入他人源码导致链接失败 | 源清单含 `MusicPage/Components/AppServices/CompletionCoordinator` | 链接期 19 个未定义符号（`IPetService`、`IFocusEngine`、`ISettingsService` 的 `qt_metacast/qt_metacall`） | 这些类依赖别的成员实现与 moc 产物；服务级验证只需 D 的三个服务 + `ServicePorts.h` | D | 已修复 |
 | 8 | 证据缺口：窗口尺寸截图与跨机运行 | 查看 `evidence/D/` | 交付清单“三尺寸截图”“另一台电脑运行”未满足 | 需人工在不同窗口尺寸下截图；需另一台未装 Qt 的机器 | D | 未完成 |
+| 9 | 音频格式与边界场景覆盖不全 | 导入 `.flac` / `.m4a` / 超长文件，或拔掉所有音频输出设备后播放 | 可能在这些场景下出现解码失败、进度异常或无提示 | 当前自动化只覆盖 `.wav` 与 `.mp3`；其余格式依赖 FFmpeg 后端，未单独验证 | D | 未覆盖（已在验收记录中声明） |
 
 ## 备注
 

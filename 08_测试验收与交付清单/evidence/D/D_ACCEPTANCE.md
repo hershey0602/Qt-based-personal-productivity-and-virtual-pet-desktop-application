@@ -18,7 +18,7 @@
 
 | 编号 | 结果 | 证据 | 说明 |
 |---|---|---|---|
-| D-T01 | **通过（服务级）** | `logs/d-verify-run.txt` → `d_t01_loadAndPlayWav` | 加载 2 首 wav，`select` 后 `playPause` 进入 Playing，position 推进，duration>0；导入后不自播 |
+| D-T01 | **通过（服务级）** | `logs/d-verify-run.txt` → `d_t01_loadAndPlayWav`、`d_t01b_mp3Playback` | wav 与 mp3 分别实测：加载后 `select` 再 `playPause` 进入 Playing，position 推进，duration>0；导入后不自播 |
 | D-T02 | **部分** | `d_t02_pauseAndStop` | 暂停冻结、停止归零已通过；**跨任务/宠物页回来继续播未执行**（依赖 A 的页面导航与 Live 装配） |
 | D-T03 | **通过（服务级）** | `d_t03_previousNextWrap` | 末曲 next 回首曲、首曲 previous 到末曲 |
 | D-T04 | **部分** | `d_t04_seekAndVolume` | seek 到中点误差<150ms、音量 0/100 生效；**不可 seek 媒体的错误返回未单独覆盖** |
@@ -43,7 +43,9 @@
 | 构建（成功） | 仅编 D 三个服务 + `ServicePorts.h`(moc) + `resources.qrc` | 0 | `logs/d-verify-build-success.log` |
 | 运行测试 | `d_service_verify.exe -o <txt>,txt` | 0 | `logs/d-verify-run.txt`、`logs/d-verify-run-stderr.log` |
 
-测试汇总：`Totals: 10 passed, 0 failed, 0 skipped, 0 blacklisted, 2965ms`（耗时说明真实解码与播放，非空跑）。
+测试汇总：`Totals: 11 passed, 0 failed, 0 skipped, 0 blacklisted, 3115ms`（含 wav 与 mp3 各一条真实播放用例；耗时说明真实解码与播放，非空跑）。
+
+格式覆盖：`.wav`、`.mp3` 实测通过；`.flac`、`.m4a`、超长文件、无音频设备场景未覆盖（见 `D_KNOWN_ISSUES.md` 第 9 条）。
 
 ## 运行证据
 

@@ -1,6 +1,7 @@
 #include <QtTest>
 
 #include <QAudioOutput>
+#include <QDir>
 #include <QFile>
 #include <QMediaPlayer>
 #include <QSettings>
@@ -26,6 +27,7 @@ private slots:
     void d_t06_rebuildRestoresWithoutAutoplay();
     void d_t07_preferencesPersist();
     void d_t09_completionSoundSwitchAndDedup();
+    void d_t01b_mp3Playback();
 
 private:
     QTemporaryDir temp_;
@@ -258,6 +260,29 @@ void DServiceVerify::d_t09_completionSoundSwitchAndDedup()
     disabledSound.playForCompletedSession(QStringLiteral("session-disabled"));
     QTest::qWait(300);
     QVERIFY(!disabledEffect->isPlaying());
+}
+
+void DServiceVerify::d_t01b_mp3Playback()
+{
+    const QString mp3 = qEnvironmentVariable(
+        "FG_MP3_PATH",
+        QStringLiteral("D:/qt_project/focusgarden/build/release-deploy/test-mp3.mp3"));
+    if (!QFile::exists(mp3)) {
+        QSKIP(qPrintable(QStringLiteral("未提供 mp3 样本: ") + mp3));
+    }
+    std::unique_ptr<SettingsService> settings(makeSettings());
+    MusicPreferences music;
+    music.localPaths = {QDir::toNativeSeparators(mp3)};
+    QVERIFY(settings->saveMusicPreferences(music).ok);
+    std::unique_ptr<MusicController> controller(makeController(*settings));
+    QVERIFY(controller);
+    QCOMPARE(controller->snapshot().tracks.size(), 1);
+    QVERIFY(controller->select(0).ok);
+    QVERIFY(controller->playPause().ok);
+    QVERIFY2(waitForPlaying(*controller), "mp3 未进入 PlayingState");
+    QVERIFY2(waitForPosition(*controller, 0), "mp3 播放位置未推进");
+    QVERIFY(controller->snapshot().durationMs > 0);
+    QVERIFY(controller->stop().ok);
 }
 }
 

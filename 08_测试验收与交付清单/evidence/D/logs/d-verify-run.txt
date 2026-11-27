@@ -6,7 +6,6 @@ PASS   : fg::DServiceVerify::d_t01_loadAndPlayWav()
 PASS   : fg::DServiceVerify::d_t02_pauseAndStop()
 QWARN  : fg::DServiceVerify::d_t03_previousNextWrap() qt.multimedia.ffmpeg.mediadataholder: Could not open media. FFmpeg error description: Immediate exit requested
 QWARN  : fg::DServiceVerify::d_t03_previousNextWrap() qt.multimedia.ffmpeg.mediadataholder: Could not open media. FFmpeg error description: Immediate exit requested
-QWARN  : fg::DServiceVerify::d_t03_previousNextWrap() qt.multimedia.ffmpeg.mediadataholder: Could not open media. FFmpeg error description: Immediate exit requested
 PASS   : fg::DServiceVerify::d_t03_previousNextWrap()
 PASS   : fg::DServiceVerify::d_t04_seekAndVolume()
 QWARN  : fg::DServiceVerify::d_t05_badPathSingleError() qt.multimedia.ffmpeg.mediadataholder: Could not open media. FFmpeg error description: Invalid data found when processing input
@@ -14,6 +13,7 @@ PASS   : fg::DServiceVerify::d_t05_badPathSingleError()
 PASS   : fg::DServiceVerify::d_t06_rebuildRestoresWithoutAutoplay()
 PASS   : fg::DServiceVerify::d_t07_preferencesPersist()
 PASS   : fg::DServiceVerify::d_t09_completionSoundSwitchAndDedup()
+PASS   : fg::DServiceVerify::d_t01b_mp3Playback()
 PASS   : fg::DServiceVerify::cleanupTestCase()
-Totals: 10 passed, 0 failed, 0 skipped, 0 blacklisted, 2965ms
+Totals: 11 passed, 0 failed, 0 skipped, 0 blacklisted, 3115ms
 ********* Finished testing of fg::DServiceVerify *********
